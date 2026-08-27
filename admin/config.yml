@@ -1,418 +1,108 @@
-
 backend:
   name: git-gateway
   branch: main
 
-media_folder: "images"
-public_folder: "/images"
-
-media_library:
-  name: uploadcare
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
 
 collections:
 
-  # ============================================================
-  # SITE SETTINGS
-  # File: content/site.yml
-  # ============================================================
-
-  - name: "site"
-    label: "Site Settings"
-    description: "Manage homepage headlines, CTA buttons, About section, statistics, amenities and global SEO."
-    files:
-
-      - file: "content/site.yml"
-        label: "Global Website Settings"
-        name: "settings"
-
-        fields:
-
-          # ======================================================
-          # BASIC SITE
-          # ======================================================
-
-          - label: "Website Title"
-            name: "title"
-            widget: "string"
-            hint: "Main website title."
-
-          - label: "Website Description"
-            name: "description"
-            widget: "text"
-            required: false
-            hint: "Short description of Dubai Link Realty."
-
-          # ======================================================
-          # HERO
-          # ======================================================
-
-          - label: "Hero Section"
-            name: "hero"
-            widget: "object"
-            fields:
-
-              - label: "Main Hero Headline"
-                name: "headline"
-                widget: "string"
-                hint: "Main headline displayed at the top of the website."
-
-              - label: "Hero Supporting Text"
-                name: "description"
-                widget: "text"
-                required: false
-                hint: "Supporting text displayed below the main headline."
-
-              - label: "Hero Background Image"
-                name: "image"
-                widget: "image"
-                required: false
-                hint: "Upload the main hero background image."
-
-              - label: "Primary CTA Button Text"
-                name: "primary_cta_text"
-                widget: "string"
-                required: false
-                hint: "Example: Explore Properties"
-
-              - label: "Primary CTA Button Link"
-                name: "primary_cta_link"
-                widget: "string"
-                required: false
-                hint: "Example: #projects"
-
-              - label: "Secondary CTA Button Text"
-                name: "secondary_cta_text"
-                widget: "string"
-                required: false
-                hint: "Example: Contact Us"
-
-              - label: "Secondary CTA Button Link"
-                name: "secondary_cta_link"
-                widget: "string"
-                required: false
-                hint: "Example: #contact"
-
-          # ======================================================
-          # ABOUT
-          # ======================================================
-
-          - label: "About Section"
-            name: "about"
-            widget: "object"
-            fields:
-
-              - label: "About Section Heading"
-                name: "heading"
-                widget: "string"
-
-              - label: "About Section Content"
-                name: "content"
-                widget: "text"
-
-              - label: "About Section Image"
-                name: "image"
-                widget: "image"
-                required: false
-                hint: "Upload an image for the About section."
-
-          # ======================================================
-          # STATISTICS
-          # ======================================================
-
-          - label: "Statistics"
-            name: "statistics"
-            widget: "list"
-            required: false
-            summary: "{{fields.number}} — {{fields.label}}"
-            fields:
-
-              - label: "Statistic Number"
-                name: "number"
-                widget: "string"
-                hint: "Example: 100+"
-
-              - label: "Statistic Label"
-                name: "label"
-                widget: "string"
-                hint: "Example: Property Opportunities"
-
-              - label: "Statistic Description"
-                name: "description"
-                widget: "string"
-                required: false
-
-          # ======================================================
-          # AMENITIES
-          # ======================================================
-
-          - label: "Amenities"
-            name: "amenities"
-            widget: "list"
-            required: false
-            summary: "{{fields.name}}"
-            fields:
-
-              - label: "Amenity Name"
-                name: "name"
-                widget: "string"
-                hint: "Example: Swimming Pool"
-
-              - label: "Amenity Description"
-                name: "description"
-                widget: "string"
-                required: false
-                hint: "Short description of this amenity."
-
-              - label: "Amenity Icon"
-                name: "icon"
-                widget: "string"
-                required: false
-                hint: "Optional Font Awesome icon class. Example: fa-solid fa-water-ladder"
-
-          # ======================================================
-          # GLOBAL SEO
-          # ======================================================
-
-          - label: "Global SEO Settings"
-            name: "seo"
-            widget: "object"
-            fields:
-
-              - label: "SEO Page Title"
-                name: "title"
-                widget: "string"
-                hint: "Recommended: concise, descriptive page title."
-
-              - label: "SEO Meta Description"
-                name: "description"
-                widget: "text"
-                hint: "Write a compelling description for search engines."
-
-              - label: "Social Sharing Image"
-                name: "og_image"
-                widget: "image"
-                required: false
-                hint: "Image displayed when the website is shared on social platforms."
-
-              - label: "Canonical URL"
-                name: "canonical_url"
-                widget: "string"
-                required: false
-                hint: "Preferred public URL of the homepage."
-
-              - label: "SEO Topics"
-                name: "keywords"
-                widget: "list"
-                required: false
-                hint: "Add natural search topics. Avoid keyword stuffing."
-
-  # ============================================================
-  # PROJECTS
-  # ============================================================
-
   - name: "projects"
     label: "Projects"
-    description: "Add and manage Dubai real estate projects."
-    folder: "content/projects"
+    label_singular: "Project"
+    folder: "Content/Projects"
     create: true
-    extension: "yml"
-    format: "yaml"
     slug: "{{slug}}"
 
     fields:
 
-      # ========================================================
-      # PROJECT BASIC INFORMATION
-      # ========================================================
-
-      - label: "Project Name"
+      - label: "Project Title"
         name: "title"
         widget: "string"
-        hint: "Example: Élanora by Zoya"
+        required: false
 
-      - label: "Location / Corridor"
-        name: "location"
-        widget: "string"
-        hint: "Enter the exact project location or Dubai corridor."
-
-      - label: "Featured Project Image"
+      - label: "Project Image"
         name: "image"
         widget: "image"
-        hint: "Upload the main project image displayed on the project card."
+        required: false
 
-      # ========================================================
-      # STATUS
-      # ========================================================
-
-      - label: "Project Status"
+      - label: "Status"
         name: "status"
-        widget: "select"
-        options:
-          - label: "Ready to Move"
-            value: "ready-to-move"
+        widget: "string"
+        required: false
 
-          - label: "New Launch"
-            value: "new-launch"
-
-          - label: "Under Construction"
-            value: "under-construction"
-
-          - label: "Coming Soon"
-            value: "coming-soon"
-
-        hint: "Select the current project status."
-
-      # ========================================================
-      # PROPERTY TYPE
-      # ========================================================
-
-      - label: "Property Type"
-        name: "property_type"
-        widget: "select"
-        options:
-          - label: "Apartment"
-            value: "apartment"
-
-          - label: "Studio"
-            value: "studio"
-
-          - label: "1 Bedroom"
-            value: "1-bedroom"
-
-          - label: "2 Bedroom"
-            value: "2-bedroom"
-
-          - label: "3 Bedroom"
-            value: "3-bedroom"
-
-          - label: "Penthouse"
-            value: "penthouse"
-
-          - label: "Villa"
-            value: "villa"
-
-          - label: "Townhouse"
-            value: "townhouse"
-
-        hint: "Select the primary property type."
-
-      # ========================================================
-      # PRICE
-      # ========================================================
+      - label: "Location"
+        name: "location"
+        widget: "string"
+        required: false
 
       - label: "Starting Price"
         name: "price"
         widget: "string"
-        hint: "Example: AED 850,000. Keep the price exactly as approved for publication."
-
-      # ========================================================
-      # PAYMENT PLAN
-      # ========================================================
+        required: false
 
       - label: "Payment Plan"
         name: "payment_plan"
         widget: "string"
-        hint: "Example: 20% Down Payment + Flexible Installments"
-
-      # ========================================================
-      # HANDOVER
-      # ========================================================
+        required: false
 
       - label: "Handover"
         name: "handover"
         widget: "string"
-        hint: "Example: Q4 2027"
-
-      # ========================================================
-      # BROCHURE
-      # ========================================================
-
-      - label: "Project Brochure / PDF"
-        name: "brochure"
-        widget: "file"
         required: false
-        media_library:
-          config:
-            multiple: false
-        hint: "Upload the official project brochure PDF or inventory sheet here."
 
-      # ========================================================
-      # GALLERY
-      # ========================================================
+      - label: "Description"
+        name: "description"
+        widget: "text"
+        required: false
 
-      - label: "Project Gallery"
-        name: "gallery"
+      - label: "Featured Project"
+        name: "featured"
+        widget: "boolean"
+        required: false
+        default: false
+
+      - label: "Brochures"
+        name: "brochures"
         widget: "list"
         required: false
-        hint: "Add multiple project images for the gallery."
 
-        field:
-          label: "Gallery Image"
-          name: "image"
-          widget: "image"
-
-      # ========================================================
-      # YOUTUBE VIDEO
-      # ========================================================
-
-      - label: "Property Walkthrough Video"
-        name: "video"
-        widget: "string"
-        required: false
-        hint: "Paste the YouTube Video ID or YouTube Embed URL here."
-
-      # ========================================================
-      # FULL DESCRIPTION
-      # ========================================================
-
-      - label: "Full Project Description"
-        name: "description"
-        widget: "markdown"
-        required: false
-        hint: "Write the complete project description, features, location information and investment highlights."
-
-      # ========================================================
-      # SEO
-      # ========================================================
-
-      - label: "Project SEO Settings"
-        name: "seo"
-        widget: "object"
-        collapsed: true
         fields:
 
-          - label: "SEO Page Title"
-            name: "title"
+          - label: "Brochure Name"
+            name: "name"
             widget: "string"
             required: false
-            hint: "Example: Élanora by Zoya Dubai | Apartments & Payment Plan"
 
-          - label: "SEO Meta Description"
-            name: "description"
-            widget: "text"
+          - label: "Brochure File"
+            name: "file"
+            widget: "file"
             required: false
-            hint: "Write a clear, natural description of this project for search engines."
 
-          - label: "Social Sharing Image"
-            name: "og_image"
-            widget: "image"
+          - label: "External Brochure URL"
+            name: "url"
+            widget: "string"
             required: false
-            hint: "Image displayed when this project is shared on WhatsApp, Facebook, LinkedIn or X."
 
-          - label: "SEO Search Topics"
-            name: "keywords"
-            widget: "list"
-            required: false
-            hint: "Add relevant search topics naturally."
 
-          - label: "AI Search Summary"
-            name: "ai_summary"
-            widget: "text"
-            required: false
-            hint: "Write a factual summary suitable for AI-powered search and property discovery."
+      - label: "Locations"
+        name: "locations"
+        widget: "list"
+        required: false
 
-          - label: "AI Search Questions"
-            name: "ai_questions"
-            widget: "list"
+        fields:
+
+          - label: "Location Name"
+            name: "name"
+            widget: "string"
             required: false
-            hint: "Add natural questions buyers may ask about this project."
+
+          - label: "Address"
+            name: "address"
+            widget: "string"
+            required: false
+
+          - label: "Map URL"
+            name: "map_url"
+            widget: "string"
+            required: false
