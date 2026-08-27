@@ -1,48 +1,47 @@
- backend:
+backend:
   name: git-gateway
   branch: main
 
 media_folder: "images"
 public_folder: "/images"
 
-media_library:
-  name: uploadcare
+site_url: "/"
+display_url: "/"
 
 collections:
 
   # ============================================================
-  # SITE SETTINGS / GLOBAL
+  # SITE / GLOBAL SETTINGS
   # ============================================================
-
   - name: "site"
-    label: "Site Settings"
-    description: "Manage global homepage content, SEO, CTA, statistics and amenities."
+    label: "Site Settings / Global"
+    description: "Manage homepage content, hero section, CTA buttons, statistics, amenities and global SEO."
     files:
 
       - file: "content/site.yml"
         label: "Global Website Settings"
-        name: "settings"
+        name: "global"
 
         fields:
 
-          # ------------------------------------------------------
-          # BASIC SITE INFORMATION
-          # ------------------------------------------------------
+          # ======================================================
+          # BRAND
+          # ======================================================
 
-          - label: "Website Title"
-            name: "title"
+          - label: "Website / Brand Name"
+            name: "site_name"
             widget: "string"
-            hint: "Main website title used for the homepage."
+            hint: "Enter the exact business or website name displayed on the website."
 
-          - label: "Website Description"
-            name: "description"
-            widget: "text"
+          - label: "Website Tagline"
+            name: "tagline"
+            widget: "string"
             required: false
-            hint: "Short description of Dubai Link Realty and the services offered."
+            hint: "Enter a short professional tagline describing your real estate business."
 
-          # ------------------------------------------------------
+          # ======================================================
           # HERO SECTION
-          # ------------------------------------------------------
+          # ======================================================
 
           - label: "Hero Section"
             name: "hero"
@@ -52,34 +51,53 @@ collections:
               - label: "Main Hero Headline"
                 name: "headline"
                 widget: "string"
-                hint: "Main headline displayed at the top of the homepage."
+                hint: "Enter the main headline visitors should see at the top of the homepage."
 
               - label: "Hero Supporting Text"
                 name: "description"
                 widget: "text"
-                required: false
-                hint: "Short supporting text displayed below the main headline."
+                hint: "Enter 1–3 sentences explaining your Dubai real estate offering."
 
               - label: "Hero Background Image"
-                name: "image"
+                name: "background_image"
                 widget: "image"
                 required: false
-                hint: "Upload the main image used in the homepage hero section."
+                hint: "Upload the main high-quality background image used behind the homepage hero section."
 
               - label: "Primary CTA Button Text"
                 name: "primary_cta_text"
                 widget: "string"
-                required: false
                 hint: "Example: Explore Properties"
 
               - label: "Primary CTA Button Link"
                 name: "primary_cta_link"
                 widget: "string"
-                required: false
                 hint: "Example: #projects"
 
               - label: "Secondary CTA Button Text"
                 name: "secondary_cta_text"
                 widget: "string"
                 required: false
-               
+                hint: "Example: Schedule a Consultation"
+
+              - label: "Secondary CTA Button Link"
+                name: "secondary_cta_link"
+                widget: "string"
+                required: false
+                hint: "Example: #contact"
+
+          # ======================================================
+          # HEADLINES
+          # ======================================================
+
+          - label: "Homepage Headlines"
+            name: "headlines"
+            widget: "object"
+            fields:
+
+              - label: "About Section Heading"
+                name: "about_heading"
+                widget: "string"
+                hint: "Heading displayed above the About section."
+
+              - label: "Projects Section Heading"
