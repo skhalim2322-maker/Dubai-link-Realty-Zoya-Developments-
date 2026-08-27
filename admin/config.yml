@@ -12,3 +12,6 @@ collections:
       - file: "index.html"
         label: "Home Page"
         name: "home"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+
