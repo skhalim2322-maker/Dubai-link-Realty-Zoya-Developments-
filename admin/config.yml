@@ -2,16 +2,405 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "images"
-public_folder: "/images"
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+site_url: "https://your-domain.com"
+display_url: "https://your-domain.com"
+
+publish_mode: editorial_workflow
 
 collections:
+
+  # ----------------------------------------
+  # GLOBAL SITE SETTINGS
+  # ----------------------------------------
+  - name: "site"
+    label: "Site Settings"
+    files:
+
+      - file: "content/site.yml"
+        label: "Global Settings"
+        name: "global"
+
+        fields:
+
+          - label: "Brand"
+            name: "brand"
+            widget: "object"
+            fields:
+              - {
+                  label: "Brand Name",
+                  name: "name",
+                  widget: "string"
+                }
+
+              - {
+                  label: "Tagline",
+                  name: "tagline",
+                  widget: "string",
+                  required: false
+                }
+
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+
+              - {
+                  label: "WhatsApp",
+                  name: "whatsapp",
+                  widget: "string",
+                  required: false
+                }
+
+              - {
+                  label: "Phone",
+                  name: "phone",
+                  widget: "string",
+                  required: false
+                }
+
+              - {
+                  label: "Email",
+                  name: "email",
+                  widget: "string",
+                  required: false
+                }
+
+          - label: "Social Links"
+            name: "social"
+            widget: "object"
+            fields:
+
+              - {
+                  label: "Instagram",
+                  name: "instagram",
+                  widget: "string",
+                  required: false
+                }
+
+              - {
+                  label: "Facebook",
+                  name: "facebook",
+                  widget: "string",
+                  required: false
+                }
+
+              - {
+                  label: "LinkedIn",
+                  name: "linkedin",
+                  widget: "string",
+                  required: false
+                }
+
+
+  # ----------------------------------------
+  # HOME PAGE
+  # ----------------------------------------
   - name: "pages"
     label: "Pages"
     files:
-      - file: "index.html"
+
+      - file: "content/home.yml"
         label: "Home Page"
         name: "home"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
 
+        fields:
+
+          # HERO
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+
+            fields:
+
+              - {
+                  label: "Eyebrow",
+                  name: "eyebrow",
+                  widget: "string"
+                }
+
+              - {
+                  label: "Headline",
+                  name: "headline",
+                  widget: "string"
+                }
+
+              - {
+                  label: "Highlighted Text",
+                  name: "highlight",
+                  widget: "string"
+                }
+
+              - {
+                  label: "Description",
+                  name: "description",
+                  widget: "text"
+                }
+
+              - {
+                  label: "Background Image",
+                  name: "background",
+                  widget: "image"
+                }
+
+              - {
+                  label: "Primary CTA",
+                  name: "primary_cta",
+                  widget: "object"
+                }
+
+              - {
+                  label: "Secondary CTA",
+                  name: "secondary_cta",
+                  widget: "object"
+                }
+
+
+          # ABOUT
+          - label: "About"
+            name: "about"
+            widget: "object"
+
+            fields:
+
+              - {
+                  label: "Eyebrow",
+                  name: "eyebrow",
+                  widget: "string"
+                }
+
+              - {
+                  label: "Heading",
+                  name: "heading",
+                  widget: "string"
+                }
+
+              - {
+                  label: "Description",
+                  name: "description",
+                  widget: "text"
+                }
+
+              - {
+                  label: "Image",
+                  name: "image",
+                  widget: "image"
+                }
+
+              - {
+                  label: "Commission",
+                  name: "commission",
+                  widget: "string"
+                }
+
+              - {
+                  label: "Escrow",
+                  name: "escrow",
+                  widget: "string"
+                }
+
+
+          # PROJECT SECTION
+          - label: "Projects Section"
+            name: "projects_section"
+            widget: "object"
+
+            fields:
+
+              - {
+                  label: "Eyebrow",
+                  name: "eyebrow",
+                  widget: "string"
+                }
+
+              - {
+                  label: "Heading",
+                  name: "heading",
+                  widget: "string"
+                }
+
+              - {
+                  label: "Description",
+                  name: "description",
+                  widget: "text"
+                }
+
+
+          # AMENITIES
+          - label: "Amenities"
+            name: "amenities"
+            widget: "list"
+
+            fields:
+
+              - {
+                  label: "Title",
+                  name: "title",
+                  widget: "string"
+                }
+
+              - {
+                  label: "Description",
+                  name: "description",
+                  widget: "string"
+                }
+
+              - {
+                  label: "Icon",
+                  name: "icon",
+                  widget: "string"
+                }
+
+
+          # SEO
+          - label: "SEO"
+            name: "seo"
+            widget: "object"
+
+            fields:
+
+              - {
+                  label: "Meta Title",
+                  name: "title",
+                  widget: "string"
+                }
+
+              - {
+                  label: "Meta Description",
+                  name: "description",
+                  widget: "text"
+                }
+
+              - {
+                  label: "Social Image",
+                  name: "image",
+                  widget: "image",
+                  required: false
+                }
+
+
+  # ----------------------------------------
+  # PROJECTS
+  # ----------------------------------------
+  - name: "projects"
+    label: "Projects"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+
+    fields:
+
+      - {
+          label: "Project Name",
+          name: "title",
+          widget: "string"
+        }
+
+      - {
+          label: "Slug",
+          name: "slug",
+          widget: "string"
+        }
+
+      - {
+          label: "Location",
+          name: "location",
+          widget: "string"
+        }
+
+      - {
+          label: "Project Status",
+          name: "status",
+          widget: "select",
+          options:
+            - "Available"
+            - "Coming Soon"
+            - "Sold Out"
+        }
+
+      - {
+          label: "Cover Image",
+          name: "image",
+          widget: "image"
+        }
+
+      - {
+          label: "Short Description",
+          name: "excerpt",
+          widget: "text"
+        }
+
+      - {
+          label: "Full Description",
+          name: "body",
+          widget: "markdown"
+        }
+
+      - {
+          label: "Property Type",
+          name: "property_type",
+          widget: "select",
+          options:
+            - "Studio"
+            - "1 Bedroom"
+            - "2 Bedroom"
+            - "3 Bedroom"
+            - "Penthouse"
+            - "Villa"
+        }
+
+      - {
+          label: "Starting Price",
+          name: "starting_price",
+          widget: "string",
+          required: false
+        }
+
+      - {
+          label: "Payment Plan",
+          name: "payment_plan",
+          widget: "string",
+          required: false
+        }
+
+      - {
+          label: "Handover",
+          name: "handover",
+          widget: "string",
+          required: false
+        }
+
+      - label: "Gallery"
+        name: "gallery"
+        widget: "list"
+        required: false
+        field:
+          label: "Image"
+          name: "image"
+          widget: "image"
+
+      - label: "Featured"
+        name: "featured"
+        widget: "boolean"
+        default: false
+
+      - label: "SEO"
+        name: "seo"
+        widget: "object"
+        fields:
+
+          - {
+              label: "Meta Title",
+              name: "title",
+              widget: "string",
+              required: false
+            }
+
+          - {
+              label: "Meta Description",
+              name: "description",
+              widget: "text",
+              required: false
+            }
