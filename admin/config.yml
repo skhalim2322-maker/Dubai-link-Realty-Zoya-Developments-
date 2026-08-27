@@ -1,53 +1,85 @@
-- label: "SEO Settings — Project Search Optimization"
-  name: "seo"
-  widget: "object"
-  collapsed: true
-  fields:
+ backend:
+  name: git-gateway
+  branch: main
 
-    - label: "SEO Page Title"
-      name: "title"
-      widget: "string"
-      required: false
-      hint: "Write a concise Google-friendly title. Example: Élanora by Zoya Dubai | Apartments & Payment Plan"
+media_folder: "images"
+public_folder: "/images"
 
-    - label: "SEO Meta Description"
-      name: "description"
-      widget: "text"
-      required: false
-      hint: "Write a compelling 140–160 character description explaining the project, location and main benefit."
+media_library:
+  name: uploadcare
 
-    - label: "SEO Keywords / Topics"
-      name: "keywords"
-      widget: "list"
-      required: false
-      hint: "Add natural search topics such as Dubai apartments, Zoya Developments, Élanora Dubai. Do not keyword-stuff."
+collections:
 
-    - label: "Social Sharing Image"
-      name: "og_image"
-      widget: "image"
-      required: false
-      hint: "Upload the image that should appear when this project URL is shared on WhatsApp, Facebook, LinkedIn or X."
+  # ============================================================
+  # SITE SETTINGS / GLOBAL
+  # ============================================================
 
-    - label: "Google Search / AI Summary"
-      name: "ai_summary"
-      widget: "text"
-      required: false
-      hint: "Write a factual 2–4 sentence summary describing the project, location, property type and key selling points."
+  - name: "site"
+    label: "Site Settings"
+    description: "Manage global homepage content, SEO, CTA, statistics and amenities."
+    files:
 
-    - label: "AI Search Topics"
-      name: "ai_topics"
-      widget: "list"
-      required: false
-      hint: "Add natural-language questions or topics potential buyers may search for."
+      - file: "content/site.yml"
+        label: "Global Website Settings"
+        name: "settings"
 
-    - label: "Project Canonical URL"
-      name: "canonical_url"
-      widget: "string"
-      required: false
-      hint: "Enter the preferred public URL for this project page if it has its own dedicated URL."
+        fields:
 
-    - label: "YouTube Video ID / Embed URL"
-      name: "video"
-      widget: "string"
-      required: false
-      hint: "Paste only the YouTube video ID or the complete YouTube embed URL for the property walkthrough."
+          # ------------------------------------------------------
+          # BASIC SITE INFORMATION
+          # ------------------------------------------------------
+
+          - label: "Website Title"
+            name: "title"
+            widget: "string"
+            hint: "Main website title used for the homepage."
+
+          - label: "Website Description"
+            name: "description"
+            widget: "text"
+            required: false
+            hint: "Short description of Dubai Link Realty and the services offered."
+
+          # ------------------------------------------------------
+          # HERO SECTION
+          # ------------------------------------------------------
+
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+
+              - label: "Main Hero Headline"
+                name: "headline"
+                widget: "string"
+                hint: "Main headline displayed at the top of the homepage."
+
+              - label: "Hero Supporting Text"
+                name: "description"
+                widget: "text"
+                required: false
+                hint: "Short supporting text displayed below the main headline."
+
+              - label: "Hero Background Image"
+                name: "image"
+                widget: "image"
+                required: false
+                hint: "Upload the main image used in the homepage hero section."
+
+              - label: "Primary CTA Button Text"
+                name: "primary_cta_text"
+                widget: "string"
+                required: false
+                hint: "Example: Explore Properties"
+
+              - label: "Primary CTA Button Link"
+                name: "primary_cta_link"
+                widget: "string"
+                required: false
+                hint: "Example: #projects"
+
+              - label: "Secondary CTA Button Text"
+                name: "secondary_cta_text"
+                widget: "string"
+                required: false
+               
