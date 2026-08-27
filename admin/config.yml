@@ -1,5 +1,53 @@
-Please optimize my single-page index.html real estate website for maximum Google Search Engine Optimization (SEO) so it can rank on top. Make sure to include:
-​Advanced Meta Tags: High-ranking meta titles, descriptions, and keywords focused on Dubai and international real estate.
-​Open Graph & Twitter Cards: Proper social sharing tags (og:title, og:image, og:description) so when links are shared on Facebook, LinkedIn, or WhatsApp, they look professional.
-​JSON-LD Schema Markup: Real estate or local business schema markup injected into the HTML head so Google bots can easily index my projects (like Élanora and Miorah), locations, and prices directly into search results.
-​Semantic HTML: Proper use of H1, H2, and alt tags for images to boost organic search rankings.
+- label: "SEO Settings — Project Search Optimization"
+  name: "seo"
+  widget: "object"
+  collapsed: true
+  fields:
+
+    - label: "SEO Page Title"
+      name: "title"
+      widget: "string"
+      required: false
+      hint: "Write a concise Google-friendly title. Example: Élanora by Zoya Dubai | Apartments & Payment Plan"
+
+    - label: "SEO Meta Description"
+      name: "description"
+      widget: "text"
+      required: false
+      hint: "Write a compelling 140–160 character description explaining the project, location and main benefit."
+
+    - label: "SEO Keywords / Topics"
+      name: "keywords"
+      widget: "list"
+      required: false
+      hint: "Add natural search topics such as Dubai apartments, Zoya Developments, Élanora Dubai. Do not keyword-stuff."
+
+    - label: "Social Sharing Image"
+      name: "og_image"
+      widget: "image"
+      required: false
+      hint: "Upload the image that should appear when this project URL is shared on WhatsApp, Facebook, LinkedIn or X."
+
+    - label: "Google Search / AI Summary"
+      name: "ai_summary"
+      widget: "text"
+      required: false
+      hint: "Write a factual 2–4 sentence summary describing the project, location, property type and key selling points."
+
+    - label: "AI Search Topics"
+      name: "ai_topics"
+      widget: "list"
+      required: false
+      hint: "Add natural-language questions or topics potential buyers may search for."
+
+    - label: "Project Canonical URL"
+      name: "canonical_url"
+      widget: "string"
+      required: false
+      hint: "Enter the preferred public URL for this project page if it has its own dedicated URL."
+
+    - label: "YouTube Video ID / Embed URL"
+      name: "video"
+      widget: "string"
+      required: false
+      hint: "Paste only the YouTube video ID or the complete YouTube embed URL for the property walkthrough."
