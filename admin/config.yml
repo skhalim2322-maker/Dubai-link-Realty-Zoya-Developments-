@@ -1,27 +1,27 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: skhalim2322-maker/Dubai-link-Realty-Zoya-Developments
   branch: main
 
-media_folder: "assets/uploads"
-public_folder: "/assets/uploads"
+media_folder: "assets/images"
+public_folder: "/assets/images"
 
 collections:
-
   - name: "projects"
     label: "Projects"
-    label_singular: "Project"
     folder: "Content/Projects"
     create: true
+    extension: "md"
+    format: "frontmatter"
     slug: "{{slug}}"
 
     fields:
-
-      - label: "Project Title"
+      - label: "Title"
         name: "title"
         widget: "string"
         required: false
 
-      - label: "Project Image"
+      - label: "Image"
         name: "image"
         widget: "image"
         required: false
@@ -36,7 +36,7 @@ collections:
         widget: "string"
         required: false
 
-      - label: "Starting Price"
+      - label: "Price"
         name: "price"
         widget: "string"
         required: false
@@ -56,43 +56,38 @@ collections:
         widget: "text"
         required: false
 
-      - label: "Featured Project"
+      - label: "Featured"
         name: "featured"
         widget: "boolean"
-        required: false
         default: false
+        required: false
 
       - label: "Brochures"
         name: "brochures"
         widget: "list"
         required: false
-
         fields:
-
-          - label: "Brochure Name"
+          - label: "Name"
             name: "name"
             widget: "string"
             required: false
 
-          - label: "Brochure File"
+          - label: "File"
             name: "file"
             widget: "file"
             required: false
 
-          - label: "External Brochure URL"
+          - label: "URL"
             name: "url"
             widget: "string"
             required: false
-
 
       - label: "Locations"
         name: "locations"
         widget: "list"
         required: false
-
         fields:
-
-          - label: "Location Name"
+          - label: "Name"
             name: "name"
             widget: "string"
             required: false
