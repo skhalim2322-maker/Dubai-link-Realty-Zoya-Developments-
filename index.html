@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sk Halim Ali | Authorized Channel Partner - Zoya Developments Dubai</title>
+    <title>Sk Halim Ali | Official Channel Partner - Zoya Developments Dubai</title>
     
-    <!-- SEO & Social Preview Meta Tags -->
+    <!-- Meta Tags for SEO & WhatsApp Preview -->
     <meta name="description" content="Official Authorized Channel Partner for Zoya Developments Dubai. Premium luxury projects including Élanora & Miorah with 1% monthly payment plans.">
     <meta property="og:title" content="Zoya Developments Dubai | Sk Halim Ali Authorized Partner">
     <meta property="og:description" content="Invest in Dubai Real Estate with verified DLD Escrow accounts and direct developer pricing.">
 
+    <!-- Netlify Identity Widget for Admin Login -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
     <style>
-        /* OFFICIAL ZOYA DEVELOPMENTS BRAND COLORS */
         :root {
             --bg-dark: #0A1D17;         /* Zoya Deep Midnight Emerald */
             --card-bg: #122921;        /* Dark Emerald Container */
@@ -81,7 +83,7 @@
             font-size: 1.4rem;
         }
 
-        /* Value Pillars Grid */
+        /* Pillars Grid */
         .pillars-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -109,7 +111,7 @@
             margin: 0;
         }
 
-        /* Property Specifications Table */
+        /* Specs Table */
         .specs-table {
             width: 100%;
             border-collapse: collapse;
@@ -135,6 +137,12 @@
             margin-top: 15px;
         }
 
+        /* Lead Capture CRM Form Style */
+        .crm-form { display: flex; flex-direction: column; gap: 12px; margin-top: 15px; }
+        .crm-form input, .crm-form select { padding: 12px; border-radius: 5px; border: 1px solid var(--border-color); background-color: var(--bg-dark); color: #fff; font-size: 0.95rem; }
+        .crm-form button { background-color: var(--gold-accent); color: var(--bg-dark); padding: 12px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; font-size: 1rem; }
+        .crm-form button:hover { background-color: var(--gold-hover); }
+
         .btn { 
             background-color: var(--gold-accent); 
             color: var(--bg-dark); 
@@ -148,19 +156,9 @@
             font-size: 0.9rem;
         }
 
-        .btn:hover {
-            background-color: var(--gold-hover);
-        }
-
-        .btn-wa { 
-            background-color: #25D366; 
-            color: #FFFFFF; 
-            font-size: 1rem;
-        }
-
-        .btn-wa:hover {
-            background-color: #20ba5a;
-        }
+        .btn:hover { background-color: var(--gold-hover); }
+        .btn-wa { background-color: #25D366; color: #FFFFFF; font-size: 1rem; }
+        .btn-wa:hover { background-color: #20ba5a; }
 
         .disclaimer-box {
             font-size: 0.8rem;
@@ -179,27 +177,23 @@
             font-size: 0.85em; 
             color: #8CA39C; 
         }
-
-        [contenteditable="true"]:hover {
-            outline: 1px dashed var(--gold-accent);
-        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1 contenteditable="true">ZOYA DEVELOPMENTS DUBAI</h1>
-    <div class="badge" contenteditable="true">Official Authorized Channel Partner</div>
-    <p style="margin-top: 12px; margin-bottom: 0;">DED License Verified Partner | <strong contenteditable="true">Sk Halim Ali</strong></p>
+    <h1>ZOYA DEVELOPMENTS DUBAI</h1>
+    <div class="badge">Official Authorized Channel Partner</div>
+    <p style="margin-top: 12px; margin-bottom: 0;">DED License Verified Partner | <strong>Sk Halim Ali</strong></p>
 </header>
 
 <div class="container">
     
-    <!-- Authorized Credentials Card -->
+    <!-- Partner Credentials -->
     <div class="card">
         <h2>Official Channel Partner Status</h2>
-        <p><strong>Partner Name:</strong> <span contenteditable="true">Sk Halim Ali</span></p>
-        <p><strong>Licensing Body:</strong> <span contenteditable="true">Registered under Dubai Department of Economic Development (DED)</span></p>
+        <p><strong>Partner Name:</strong> Sk Halim Ali</p>
+        <p><strong>Licensing Body:</strong> Registered under Dubai Department of Economic Development (DED)</p>
         <p><strong>Official Partner Email:</strong> <a href="mailto:Skhalim2322@gmail.com" style="color: var(--gold-accent);">Skhalim2322@gmail.com</a></p>
         <p><strong>Investor Guarantee:</strong> 0% Commission Fee | Direct Developer Pricing | 100% Verified DLD Escrow Accounts</p>
     </div>
@@ -229,7 +223,7 @@
 
     <!-- Project 1: Elanora -->
     <div class="card">
-        <h2 contenteditable="true">Élanora by Zoya - Dubai Industrial City (DIC)</h2>
+        <h2>Élanora by Zoya - Dubai Industrial City (DIC)</h2>
         <p>Luxury boutique residences designed for high-yielding rental income near Dubai’s key aviation and trade hubs.</p>
         
         <table class="specs-table">
@@ -246,7 +240,7 @@
 
     <!-- Project 2: Miorah -->
     <div class="card">
-        <h2 contenteditable="true">Miorah by Zoya - Verified Banking Escrow</h2>
+        <h2>Miorah by Zoya - Verified Banking Escrow</h2>
         <p>Premium modern residences in Dubai South backed by official Dubai Land Department (DLD) escrow account safety.</p>
         
         <div class="escrow-box">
@@ -260,16 +254,40 @@
         <a href="YOUR_MIORAH_BROCHURE_LINK" class="btn" target="_blank">📄 Miorah Legal & Investment Details</a>
     </div>
 
-    <!-- Direct Lead Action Card -->
+    <!-- Lead CRM Form Section -->
+    <div class="card">
+        <h2>Register for Project Pricing & Inventory</h2>
+        <p>Fill out the form below to receive unit availability, layout plans, and pricing direct to your email & WhatsApp.</p>
+        
+        <form action="https://api.web3forms.com/submit" method="POST" class="crm-form">
+            <!-- Free Access Key from Web3forms.com -->
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+            <input type="hidden" name="subject" value="New Real Estate Lead - Zoya Dubai Page">
+            
+            <input type="text" name="name" placeholder="Your Full Name" required>
+            <input type="tel" name="phone" placeholder="WhatsApp Phone Number (with Country Code)" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <select name="interested_project" required>
+                <option value="" disabled selected>Select Interested Project</option>
+                <option value="Elanora by Zoya">Élanora by Zoya (DIC)</option>
+                <option value="Miorah by Zoya">Miorah by Zoya (Dubai South)</option>
+                <option value="General Query">General Investment Query</option>
+            </select>
+            
+            <button type="submit">Submit Inquiry (Direct to Lead Database)</button>
+        </form>
+    </div>
+
+    <!-- Direct WhatsApp Inquiry -->
     <div class="card" style="text-align: center;">
         <h2>Connect for Private Investment Counseling</h2>
-        <p contenteditable="true">Get Direct Inventory Availability, Unit Allocation & Official Price Lists via WhatsApp:</p>
+        <p>Get Direct Inventory Availability, Unit Allocation & Official Price Lists via WhatsApp:</p>
         
         <!-- Replace YOUR_WHATSAPP_NUMBER with 91XXXXXXXXXX -->
         <a href="https://wa.me/YOUR_WHATSAPP_NUMBER?text=Hi%20Sk%20Halim,%20I%20am%20interested%20in%20Zoya%20Developments%20Projects." class="btn btn-wa" target="_blank">💬 Direct WhatsApp Inquiry</a>
     </div>
 
-    <!-- Legal Copyright Safeguard -->
+    <!-- Legal Disclaimer -->
     <div class="disclaimer-box">
         <p><strong>Disclaimer:</strong> Sk Halim Ali is an officially accredited Authorized Channel Partner for Zoya Developments Dubai. All property renderings, trademarks, and project branding remain the sole property of Zoya Developments. All financial transactions are directly deposited into DLD-approved project escrow accounts.</p>
     </div>
@@ -280,6 +298,17 @@
     <p>&copy; 2026 Sk Halim Ali - Authorized Channel Partner for Zoya Developments. All Rights Reserved.</p>
 </footer>
 
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+
 </body>
 </html>
-
