@@ -8,89 +8,34 @@ public_folder: "/images"
 publish_mode: editorial_workflow
 
 collections:
-  # ============================================================
-  # GLOBAL SITE SETTINGS
-  # ============================================================
-  - name: "settings"
+
+  # ==========================================================
+  # SITE SETTINGS / GLOBAL
+  # ==========================================================
+  - name: "site_settings"
     label: "Site Settings"
     files:
+
       - file: "content/site.yml"
-        label: "Global Settings"
+        label: "Global"
         name: "global"
-        fields:
-          - label: "Brand Name"
-            name: "brand_name"
-            widget: "string"
-            default: "Dubai Link Realty"
 
-          - label: "Partner"
-            name: "partner"
-            widget: "string"
-            default: "Zoya Developments"
-
-          - label: "Contact"
-            name: "contact"
-            widget: "object"
-            fields:
-              - label: "Phone"
-                name: "phone"
-                widget: "string"
-                required: false
-
-              - label: "WhatsApp"
-                name: "whatsapp"
-                widget: "string"
-                required: false
-
-              - label: "Email"
-                name: "email"
-                widget: "string"
-                required: false
-
-          - label: "Social Links"
-            name: "social"
-            widget: "object"
-            fields:
-              - label: "Instagram"
-                name: "instagram"
-                widget: "string"
-                required: false
-
-              - label: "Facebook"
-                name: "facebook"
-                widget: "string"
-                required: false
-
-              - label: "LinkedIn"
-                name: "linkedin"
-                widget: "string"
-                required: false
-
-
-  # ============================================================
-  # HOME PAGE
-  # ============================================================
-  - name: "pages"
-    label: "Pages"
-    files:
-      - file: "content/home.yml"
-        label: "Home Page"
-        name: "home"
         fields:
 
-          # ------------------------------------------------------
+          # ----------------------------------------------------
           # HERO
-          # ------------------------------------------------------
-          - label: "Hero Section"
+          # ----------------------------------------------------
+          - label: "Hero"
             name: "hero"
             widget: "object"
             fields:
+
               - label: "Eyebrow"
                 name: "eyebrow"
                 widget: "string"
                 default: "Exclusive Partnership with Zoya Developments"
 
-              - label: "Headline"
+              - label: "Main Headline"
                 name: "headline"
                 widget: "string"
                 default: "Luxury Living in the"
@@ -112,12 +57,13 @@ collections:
                 name: "primary_cta"
                 widget: "object"
                 fields:
-                  - label: "Text"
+
+                  - label: "Button Text"
                     name: "text"
                     widget: "string"
                     default: "Explore Properties"
 
-                  - label: "Link"
+                  - label: "Button Link"
                     name: "link"
                     widget: "string"
                     default: "#projects"
@@ -126,24 +72,26 @@ collections:
                 name: "secondary_cta"
                 widget: "object"
                 fields:
-                  - label: "Text"
+
+                  - label: "Button Text"
                     name: "text"
                     widget: "string"
                     default: "Schedule a Visit"
 
-                  - label: "Link"
+                  - label: "Button Link"
                     name: "link"
                     widget: "string"
                     default: "#contact"
 
 
-          # ------------------------------------------------------
+          # ----------------------------------------------------
           # ABOUT
-          # ------------------------------------------------------
-          - label: "About Section"
+          # ----------------------------------------------------
+          - label: "About"
             name: "about"
             widget: "object"
             fields:
+
               - label: "Eyebrow"
                 name: "eyebrow"
                 widget: "string"
@@ -153,50 +101,51 @@ collections:
                 name: "heading"
                 widget: "string"
 
-              - label: "Description"
-                name: "description"
-                widget: "text"
+              - label: "Content"
+                name: "content"
+                widget: "markdown"
 
               - label: "Image"
                 name: "image"
                 widget: "image"
 
-              - label: "Commission Statistic"
-                name: "commission"
-                widget: "object"
-                fields:
-                  - label: "Value"
-                    name: "value"
-                    widget: "string"
-                    default: "0%"
-
-                  - label: "Label"
-                    name: "label"
-                    widget: "string"
-                    default: "Commission Fee"
-
-              - label: "Escrow Statistic"
-                name: "escrow"
-                widget: "object"
-                fields:
-                  - label: "Value"
-                    name: "value"
-                    widget: "string"
-                    default: "100%"
-
-                  - label: "Label"
-                    name: "label"
-                    widget: "string"
-                    default: "Verified Escrow"
+              - label: "Partner Name"
+                name: "partner_name"
+                widget: "string"
+                default: "Dubai Link Realty × Zoya Developments"
 
 
-          # ------------------------------------------------------
-          # PROJECTS INTRO
-          # ------------------------------------------------------
+          # ----------------------------------------------------
+          # STATISTICS
+          # ----------------------------------------------------
+          - label: "Statistics"
+            name: "statistics"
+            widget: "list"
+            required: false
+            fields:
+
+              - label: "Number"
+                name: "number"
+                widget: "string"
+
+              - label: "Label"
+                name: "label"
+                widget: "string"
+
+              - label: "Description"
+                name: "description"
+                widget: "string"
+                required: false
+
+
+          # ----------------------------------------------------
+          # PROJECTS SECTION
+          # ----------------------------------------------------
           - label: "Projects Section"
             name: "projects_section"
             widget: "object"
             fields:
+
               - label: "Eyebrow"
                 name: "eyebrow"
                 widget: "string"
@@ -212,14 +161,15 @@ collections:
                 widget: "text"
 
 
-          # ------------------------------------------------------
+          # ----------------------------------------------------
           # AMENITIES
-          # ------------------------------------------------------
+          # ----------------------------------------------------
           - label: "Amenities"
             name: "amenities"
             widget: "list"
             required: false
             fields:
+
               - label: "Title"
                 name: "title"
                 widget: "string"
@@ -231,15 +181,17 @@ collections:
               - label: "Icon"
                 name: "icon"
                 widget: "string"
+                required: false
 
 
-          # ------------------------------------------------------
-          # CONTACT SECTION
-          # ------------------------------------------------------
-          - label: "Contact Section"
-            name: "contact_section"
+          # ----------------------------------------------------
+          # CONTACT / CTA
+          # ----------------------------------------------------
+          - label: "Contact CTA"
+            name: "contact"
             widget: "object"
             fields:
+
               - label: "Eyebrow"
                 name: "eyebrow"
                 widget: "string"
@@ -260,13 +212,14 @@ collections:
                 default: "Submit Inquiry"
 
 
-          # ------------------------------------------------------
-          # SEO
-          # ------------------------------------------------------
+          # ----------------------------------------------------
+          # GLOBAL SEO
+          # ----------------------------------------------------
           - label: "SEO"
             name: "seo"
             widget: "object"
             fields:
+
               - label: "Meta Title"
                 name: "meta_title"
                 widget: "string"
@@ -276,97 +229,126 @@ collections:
                 name: "meta_description"
                 widget: "text"
 
+              - label: "Keywords"
+                name: "keywords"
+                widget: "string"
+                required: false
+
               - label: "Social Share Image"
                 name: "social_image"
                 widget: "image"
                 required: false
 
 
-  # ============================================================
+  # ==========================================================
   # PROJECTS
-  # ============================================================
+  # ==========================================================
   - name: "projects"
     label: "Projects"
     folder: "content/projects"
     create: true
     delete: true
     slug: "{{slug}}"
-    identifier_field: "title"
+    identifier_field: "project_name"
 
     fields:
+
+      # --------------------------------------------------------
+      # BASIC PROJECT INFORMATION
+      # --------------------------------------------------------
       - label: "Project Name"
-        name: "title"
+        name: "project_name"
         widget: "string"
 
       - label: "Location"
         name: "location"
         widget: "string"
 
-      - label: "Project Status"
+
+      # --------------------------------------------------------
+      # FEATURED IMAGE
+      # --------------------------------------------------------
+      - label: "Featured Image"
+        name: "featured_image"
+        widget: "image"
+
+
+      # --------------------------------------------------------
+      # PROJECT STATUS
+      # --------------------------------------------------------
+      - label: "Status"
         name: "status"
         widget: "select"
         options:
-          - "Available"
-          - "Coming Soon"
-          - "Sold Out"
+          - "Ready to Move"
+          - "New Launch"
+          - "Under Construction"
+        default: "New Launch"
 
-      - label: "Project Type"
-        name: "project_type"
-        widget: "select"
-        options:
-          - "Residential"
-          - "Mixed Use"
-          - "Commercial"
 
-      - label: "Property Types"
-        name: "property_types"
+      # --------------------------------------------------------
+      # PROPERTY TYPE
+      # --------------------------------------------------------
+      - label: "Property Type"
+        name: "property_type"
         widget: "select"
-        multiple: true
         options:
           - "Studio"
           - "1 Bedroom"
           - "2 Bedroom"
           - "3 Bedroom"
+          - "4 Bedroom"
           - "Penthouse"
           - "Villa"
+          - "Townhouse"
+          - "Commercial"
 
-      - label: "Cover Image"
-        name: "image"
-        widget: "image"
 
-      - label: "Short Description"
-        name: "excerpt"
-        widget: "text"
-
-      - label: "Full Description"
-        name: "body"
-        widget: "markdown"
-
-      - label: "Starting Price"
-        name: "starting_price"
+      # --------------------------------------------------------
+      # PRICE
+      # --------------------------------------------------------
+      - label: "Price"
+        name: "price"
         widget: "string"
         required: false
+        hint: "Example: AED 750,000"
 
+
+      # --------------------------------------------------------
+      # PAYMENT PLAN
+      # --------------------------------------------------------
       - label: "Payment Plan"
         name: "payment_plan"
         widget: "string"
         required: false
+        hint: "Example: 1% Monthly"
 
+
+      # --------------------------------------------------------
+      # HANDOVER
+      # --------------------------------------------------------
       - label: "Handover"
         name: "handover"
         widget: "string"
         required: false
+        hint: "Example: Q4 2027"
 
-      - label: "Developer"
-        name: "developer"
-        widget: "string"
-        default: "Zoya Developments"
 
-      - label: "Project Features"
-        name: "features"
-        widget: "list"
+      # --------------------------------------------------------
+      # BROCHURE / PDF
+      # --------------------------------------------------------
+      - label: "Brochure / PDF"
+        name: "brochure"
+        widget: "file"
         required: false
+        media_library:
+          config:
+            multiple: false
 
+
+      # --------------------------------------------------------
+      # GALLERY
+      # --------------------------------------------------------
       - label: "Gallery"
         name: "gallery"
         widget: "list"
@@ -376,24 +358,38 @@ collections:
           name: "image"
           widget: "image"
 
-      - label: "Featured Project"
-        name: "featured"
-        widget: "boolean"
-        default: false
+
+      # --------------------------------------------------------
+      # FULL DESCRIPTION
+      # --------------------------------------------------------
+      - label: "Full Description"
+        name: "description"
+        widget: "markdown"
         required: false
 
-      - label: "Display Order"
-        name: "order"
-        widget: "number"
-        value_type: "int"
-        default: 0
-        required: false
 
+      # --------------------------------------------------------
+      # PROJECT FEATURES
+      # --------------------------------------------------------
+      - label: "Project Features"
+        name: "features"
+        widget: "list"
+        required: false
+        field:
+          label: "Feature"
+          name: "feature"
+          widget: "string"
+
+
+      # --------------------------------------------------------
+      # SEO
+      # --------------------------------------------------------
       - label: "SEO"
         name: "seo"
         widget: "object"
         required: false
         fields:
+
           - label: "Meta Title"
             name: "meta_title"
             widget: "string"
@@ -408,22 +404,3 @@ collections:
             name: "social_image"
             widget: "image"
             required: false
-
-
-  # ============================================================
-  # LEGAL / DISCLAIMER
-  # ============================================================
-  - name: "legal"
-    label: "Legal & Disclaimer"
-    files:
-      - file: "content/legal.yml"
-        label: "Website Disclaimer"
-        name: "disclaimer"
-        fields:
-          - label: "Disclaimer"
-            name: "disclaimer"
-            widget: "markdown"
-
-          - label: "Copyright Text"
-            name: "copyright"
-            widget: "string"
