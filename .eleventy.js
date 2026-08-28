@@ -1,5 +1,6 @@
 module.exports = function (eleventyConfig) {
 
+  // Static folders
   eleventyConfig.addPassthroughCopy({
     "images": "images"
   });
@@ -8,6 +9,16 @@ module.exports = function (eleventyConfig) {
     "admin": "admin"
   });
 
+  eleventyConfig.addPassthroughCopy({
+    "src/css": "css"
+  });
+
+  eleventyConfig.addPassthroughCopy({
+    "src/js": "js"
+  });
+
+
+  // Projects collection
   eleventyConfig.addCollection("projects", function (collectionApi) {
 
     return collectionApi
@@ -23,6 +34,8 @@ module.exports = function (eleventyConfig) {
 
   });
 
+
+  // Featured projects collection
   eleventyConfig.addCollection("featuredProjects", function (collectionApi) {
 
     return collectionApi
@@ -31,6 +44,8 @@ module.exports = function (eleventyConfig) {
 
   });
 
+
+  // Approach collection
   eleventyConfig.addCollection("approach", function (collectionApi) {
 
     return collectionApi
@@ -46,7 +61,12 @@ module.exports = function (eleventyConfig) {
 
   });
 
+
+  // Watch content changes
   eleventyConfig.addWatchTarget("./content/");
+  eleventyConfig.addWatchTarget("./_data/");
+  eleventyConfig.addWatchTarget("./images/");
+
 
   return {
 
@@ -63,9 +83,7 @@ module.exports = function (eleventyConfig) {
     ],
 
     markdownTemplateEngine: "njk",
-
     htmlTemplateEngine: "njk",
-
     dataTemplateEngine: "njk"
 
   };
