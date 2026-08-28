@@ -66,9 +66,8 @@ module.exports = function (eleventyConfig) {
 
     templateFormats: [
       "njk",
-      "md"
       "html"
-    ],
+    ],"md"
 
     markdownTemplateEngine: "njk",
 
