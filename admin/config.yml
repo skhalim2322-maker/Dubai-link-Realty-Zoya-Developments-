@@ -6,7 +6,196 @@ backend:
 media_folder: "images"
 public_folder: "/images"
 
+
 collections:
+
+  # ==========================================
+  # SITE SETTINGS
+  # ==========================================
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+
+      - label: "Website Settings"
+        name: "site"
+        file: "_data/site.yml"
+
+        fields:
+
+          - label: "Brand Name"
+            name: "brand_name"
+            widget: "string"
+
+          - label: "Brand Tagline"
+            name: "brand_tagline"
+            widget: "string"
+
+          - label: "Logo"
+            name: "logo"
+            widget: "image"
+            required: false
+
+          - label: "Partner Name"
+            name: "partner_name"
+            widget: "string"
+
+          - label: "Partner Status"
+            name: "partner_status"
+            widget: "string"
+
+          - label: "Partner Logo"
+            name: "partner_logo"
+            widget: "image"
+            required: false
+
+          - label: "Meta Description"
+            name: "meta_description"
+            widget: "text"
+
+          - label: "Hero Image"
+            name: "hero_image"
+            widget: "image"
+
+          - label: "Hero Eyebrow"
+            name: "hero_eyebrow"
+            widget: "string"
+
+          - label: "Hero Title"
+            name: "hero_title"
+            widget: "string"
+
+          - label: "Hero Highlight"
+            name: "hero_highlight"
+            widget: "string"
+
+          - label: "Hero Description"
+            name: "hero_description"
+            widget: "text"
+
+
+          # ABOUT
+
+          - label: "About Section"
+            name: "about"
+            widget: "object"
+
+            fields:
+
+              - label: "Eyebrow"
+                name: "eyebrow"
+                widget: "string"
+
+              - label: "Title"
+                name: "title"
+                widget: "string"
+
+              - label: "Description"
+                name: "description"
+                widget: "text"
+
+              - label: "Additional Description"
+                name: "additional_description"
+                widget: "text"
+                required: false
+
+              - label: "Image"
+                name: "image"
+                widget: "image"
+                required: false
+
+              - label: "Our Story"
+                name: "story"
+                widget: "text"
+
+
+          # VISION / MISSION
+
+          - label: "Vision & Mission"
+            name: "visionMission"
+            widget: "object"
+
+            fields:
+
+              - label: "Vision"
+                name: "vision"
+                widget: "text"
+
+              - label: "Mission"
+                name: "mission"
+                widget: "text"
+
+
+          # CHAIRMAN
+
+          - label: "Chairman"
+            name: "chairman"
+            widget: "object"
+
+            fields:
+
+              - label: "Name"
+                name: "name"
+                widget: "string"
+
+              - label: "Designation"
+                name: "designation"
+                widget: "string"
+
+              - label: "Photo"
+                name: "photo"
+                widget: "image"
+                required: false
+
+              - label: "Message"
+                name: "message"
+                widget: "text"
+
+
+          # APPROACH INTRO
+
+          - label: "Approach Introduction"
+            name: "approach_intro"
+            widget: "text"
+
+
+          # CONTACT
+
+          - label: "Contact Information"
+            name: "contact"
+            widget: "object"
+
+            fields:
+
+              - label: "Office Address"
+                name: "address"
+                widget: "string"
+
+              - label: "Email"
+                name: "email"
+                widget: "string"
+
+              - label: "Phone"
+                name: "phone"
+                widget: "string"
+
+              - label: "WhatsApp"
+                name: "whatsapp"
+                widget: "string"
+                required: false
+
+
+          # FOOTER
+
+          - label: "Footer Description"
+            name: "footer_description"
+            widget: "text"
+
+
+  # ==========================================
+  # PROJECTS
+  # ==========================================
+
   - name: "projects"
     label: "Projects"
     folder: "content/projects"
@@ -16,12 +205,12 @@ collections:
     slug: "{{slug}}"
 
     fields:
-      - label: "Title"
+
+      - label: "Project Title"
         name: "title"
         widget: "string"
-        required: false
 
-      - label: "Image"
+      - label: "Project Image"
         name: "image"
         widget: "image"
         required: false
@@ -36,7 +225,7 @@ collections:
         widget: "string"
         required: false
 
-      - label: "Price"
+      - label: "Starting Price"
         name: "price"
         widget: "string"
         required: false
@@ -56,7 +245,7 @@ collections:
         widget: "text"
         required: false
 
-      - label: "Featured"
+      - label: "Featured Project"
         name: "featured"
         widget: "boolean"
         default: false
@@ -66,7 +255,9 @@ collections:
         name: "brochures"
         widget: "list"
         required: false
+
         fields:
+
           - label: "Name"
             name: "name"
             widget: "string"
@@ -82,11 +273,14 @@ collections:
             widget: "string"
             required: false
 
+
       - label: "Locations"
         name: "locations"
         widget: "list"
         required: false
+
         fields:
+
           - label: "Name"
             name: "name"
             widget: "string"
@@ -101,3 +295,32 @@ collections:
             name: "map_url"
             widget: "string"
             required: false
+
+
+  # ==========================================
+  # APPROACH
+  # ==========================================
+
+  - name: "approach"
+    label: "Our Approach"
+    folder: "content/approach"
+    create: true
+    extension: "md"
+    format: "frontmatter"
+    slug: "{{slug}}"
+
+    fields:
+
+      - label: "Number"
+        name: "number"
+        widget: "number"
+        value_type: "int"
+        required: false
+
+      - label: "Title"
+        name: "title"
+        widget: "string"
+
+      - label: "Description"
+        name: "description"
+        widget: "text"
