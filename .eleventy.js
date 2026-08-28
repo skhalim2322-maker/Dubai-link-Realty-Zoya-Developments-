@@ -10,12 +10,12 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addPassthroughCopy({
-    "src/css": "css"
-  });
+  "src/style.css": "style.css"
+});
 
   eleventyConfig.addPassthroughCopy({
-    "src/js": "js"
-  });
+  "src/script.js": "script.js"
+});
 
 
   // Projects collection
