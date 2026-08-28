@@ -1,6 +1,7 @@
 {
-  "name": "dubailink-realty",
+  "name": "dubailink-realty-zoya-developments",
   "version": "1.0.0",
+  "description": "DubaiLink Realty luxury real estate website",
   "private": true,
   "scripts": {
     "build": "eleventy",
