@@ -3,13 +3,13 @@ backend:
   repo: skhalim2322-maker/Dubai-link-Realty-Zoya-Developments
   branch: main
 
-media_folder: "assets/images"
-public_folder: "/assets/images"
+media_folder: "images"
+public_folder: "/images"
 
 collections:
   - name: "projects"
     label: "Projects"
-    folder: "Content/Projects"
+    folder: "content/projects"
     create: true
     extension: "md"
     format: "frontmatter"
