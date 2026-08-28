@@ -1,0 +1,44 @@
+brand_name: "DubaiLink Realty"
+brand_tagline: "Luxury Real Estate"
+
+logo: "/images/dubailink-logo.svg"
+
+partner_name: "Zoya Developments"
+partner_status: "Authorized Partner"
+partner_logo: "/images/zoya-logo.svg"
+
+meta_description: "DubaiLink Realty — luxury real estate opportunities in Dubai."
+
+hero_image: "/images/hero.jpg"
+hero_eyebrow: "Dubai Luxury Real Estate"
+hero_title: "Spaces Made For"
+hero_highlight: "Exceptional Living."
+hero_description: "Discover thoughtfully selected residences and investment opportunities across Dubai, presented by DubaiLink Realty."
+
+about:
+  eyebrow: "About DubaiLink Realty"
+  title: "Connecting You With Dubai's Finest Addresses."
+  description: "DubaiLink Realty is a premium real estate brand focused on connecting clients with carefully selected residential and investment opportunities in Dubai."
+  additional_description: "We combine local market understanding, professional guidance and carefully selected developments to help clients make confident property decisions."
+  image: "/images/about.jpg"
+  story: "We believe property is more than an address. It is a decision that shapes lifestyles, businesses and long-term financial goals."
+
+visionMission:
+  vision: "To become a trusted real estate destination for clients seeking exceptional properties and investment opportunities in Dubai."
+  mission: "To deliver thoughtful property guidance through transparency, professional service and carefully selected opportunities."
+
+chairman:
+  name: "Farooq Khan"
+  designation: "Chairman"
+  photo: "/images/chairman.jpg"
+  message: "Our goal is simple — to create trusted relationships and connect people with opportunities that truly matter."
+
+approach_intro: "We look beyond the property itself and consider design, technology, sustainability and long-term investment value."
+
+contact:
+  address: "Bay Square, Business Bay, Dubai, UAE"
+  email: "info@dubailinkrealty.com"
+  phone: "+971 XX XXX XXXX"
+  whatsapp: ""
+
+footer_description: "Luxury real estate opportunities in Dubai, presented with professionalism and care."
