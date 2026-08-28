@@ -1,6 +1,3 @@
-const fs = require("fs");
-const path = require("path");
-
 module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({
@@ -10,7 +7,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "admin": "admin"
   });
-
 
   eleventyConfig.addCollection("projects", function (collectionApi) {
 
@@ -27,7 +23,6 @@ module.exports = function (eleventyConfig) {
 
   });
 
-
   eleventyConfig.addCollection("featuredProjects", function (collectionApi) {
 
     return collectionApi
@@ -35,7 +30,6 @@ module.exports = function (eleventyConfig) {
       .filter(project => project.data.featured === true);
 
   });
-
 
   eleventyConfig.addCollection("approach", function (collectionApi) {
 
@@ -52,9 +46,7 @@ module.exports = function (eleventyConfig) {
 
   });
 
-
   eleventyConfig.addWatchTarget("./content/");
-
 
   return {
 
@@ -66,8 +58,9 @@ module.exports = function (eleventyConfig) {
 
     templateFormats: [
       "njk",
-      "html"
-    ],"md"
+      "html",
+      "md"
+    ],
 
     markdownTemplateEngine: "njk",
 
