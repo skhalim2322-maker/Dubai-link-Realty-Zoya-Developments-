@@ -10,17 +10,26 @@
     content="width=device-width, initial-scale=1.0"
   >
 
+  <meta
+    name="description"
+    content="{{ site.meta_description or 'DubaiLink Realty — Luxury real estate opportunities in Dubai.' }}"
+  >
+
+  <meta
+    name="theme-color"
+    content="#17110d"
+  >
+
   <title>
     {{ site.brand_name or "DubaiLink Realty" }}
     | {{ site.brand_tagline or "Luxury Real Estate" }}
   </title>
 
-  <meta
-    name="description"
-    content="{{ site.meta_description or 'DubaiLink Realty — luxury real estate opportunities in Dubai.' }}"
-  >
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
 
   <link
     rel="preconnect"
@@ -33,1435 +42,11 @@
     rel="stylesheet"
   >
 
-  <style>
 
-    :root {
-
-      --brown-950: #160f0b;
-      --brown-900: #21150f;
-      --brown-800: #2d1d15;
-      --brown-700: #3d291e;
-
-      --gold: #c5a46d;
-      --gold-light: #dfc58f;
-
-      --cream: #f5f0e7;
-      --white: #ffffff;
-
-      --muted: #b9aea2;
-
-      --border:
-        rgba(197, 164, 109, 0.25);
-
-      --heading-font:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
-      --body-font:
-        "Inter",
-        Arial,
-        sans-serif;
-
-      --container: 1180px;
-
-      --transition:
-        0.3s ease;
-    }
-
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-
-    body {
-
-      background:
-        var(--brown-950);
-
-      color:
-        var(--cream);
-
-      font-family:
-        var(--body-font);
-
-      line-height:
-        1.7;
-    }
-
-
-    img {
-
-      width: 100%;
-
-      display: block;
-
-      object-fit: cover;
-    }
-
-
-    a {
-
-      color: inherit;
-
-      text-decoration: none;
-    }
-
-
-    button,
-    input,
-    textarea {
-
-      font: inherit;
-    }
-
-
-    .container {
-
-      width:
-        min(92%, var(--container));
-
-      margin-inline:
-        auto;
-    }
-
-
-    .section {
-
-      padding:
-        110px 0;
-    }
-
-
-    .eyebrow {
-
-      color:
-        var(--gold);
-
-      font-size:
-        12px;
-
-      letter-spacing:
-        3px;
-
-      text-transform:
-        uppercase;
-
-      margin-bottom:
-        16px;
-    }
-
-
-    .section-title {
-
-      font-family:
-        var(--heading-font);
-
-      font-size:
-        clamp(42px, 5vw, 68px);
-
-      font-weight:
-        500;
-
-      line-height:
-        1;
-
-      margin-bottom:
-        25px;
-    }
-
-
-    .section-text {
-
-      color:
-        var(--muted);
-
-      max-width:
-        680px;
-    }
-
-
-    /* =====================================
-       HEADER
-    ====================================== */
-
-    .site-header {
-
-      position:
-        fixed;
-
-      inset:
-        0 0 auto;
-
-      z-index:
-        1000;
-
-      background:
-        rgba(22, 15, 11, 0.94);
-
-      border-bottom:
-        1px solid var(--border);
-
-      backdrop-filter:
-        blur(12px);
-    }
-
-
-    .nav {
-
-      min-height:
-        82px;
-
-      display:
-        flex;
-
-      align-items:
-        center;
-
-      justify-content:
-        space-between;
-
-      gap:
-        30px;
-    }
-
-
-    .brand {
-
-      display:
-        flex;
-
-      align-items:
-        center;
-
-      gap:
-        14px;
-    }
-
-
-    .brand-logo {
-
-      width:
-        48px;
-
-      height:
-        48px;
-
-      object-fit:
-        contain;
-    }
-
-
-    .brand-text strong {
-
-      display:
-        block;
-
-      font-family:
-        var(--heading-font);
-
-      font-size:
-        24px;
-
-      font-weight:
-        600;
-
-      line-height:
-        1;
-    }
-
-
-    .brand-text small {
-
-      color:
-        var(--gold);
-
-      font-size:
-        8px;
-
-      letter-spacing:
-        2px;
-
-      text-transform:
-        uppercase;
-    }
-
-
-    .nav-links {
-
-      display:
-        flex;
-
-      align-items:
-        center;
-
-      gap:
-        28px;
-
-      list-style:
-        none;
-    }
-
-
-    .nav-links a {
-
-      font-size:
-        12px;
-
-      letter-spacing:
-        1px;
-
-      text-transform:
-        uppercase;
-
-      transition:
-        var(--transition);
-    }
-
-
-    .nav-links a:hover {
-
-      color:
-        var(--gold-light);
-    }
-
-
-    .nav-cta {
-
-      padding:
-        12px 20px;
-
-      border:
-        1px solid var(--gold);
-
-      color:
-        var(--gold-light) !important;
-    }
-
-
-    .menu-toggle {
-
-      display:
-        none;
-
-      border:
-        1px solid var(--border);
-
-      background:
-        transparent;
-
-      color:
-        var(--cream);
-
-      padding:
-        8px 12px;
-
-      cursor:
-        pointer;
-    }
-
-
-    /* =====================================
-       PARTNER
-    ====================================== */
-
-    .partner-bar {
-
-      padding:
-        100px 0 18px;
-
-      background:
-        var(--brown-900);
-
-      border-bottom:
-        1px solid var(--border);
-    }
-
-
-    .partner-inner {
-
-      display:
-        flex;
-
-      justify-content:
-        flex-end;
-
-      align-items:
-        center;
-
-      gap:
-        15px;
-
-      color:
-        var(--muted);
-
-      font-size:
-        11px;
-
-      letter-spacing:
-        1.5px;
-
-      text-transform:
-        uppercase;
-    }
-
-
-    .partner-logo {
-
-      width:
-        110px;
-
-      height:
-        38px;
-
-      object-fit:
-        contain;
-    }
-
-
-    /* =====================================
-       HERO
-    ====================================== */
-
-    .hero {
-
-      min-height:
-        760px;
-
-      display:
-        grid;
-
-      align-items:
-        center;
-
-      background:
-
-        linear-gradient(
-          90deg,
-          rgba(22,15,11,.96),
-          rgba(22,15,11,.60),
-          rgba(22,15,11,.78)
-        ),
-
-        url("{{ site.hero_image or '/assets/images/hero.jpg' }}")
-        center/cover;
-    }
-
-
-    .hero-content {
-
-      max-width:
-        780px;
-
-      padding:
-        100px 0;
-    }
-
-
-    .hero h1 {
-
-      font-family:
-        var(--heading-font);
-
-      font-size:
-        clamp(58px, 8vw, 105px);
-
-      font-weight:
-        500;
-
-      line-height:
-        .9;
-
-      margin-bottom:
-        30px;
-    }
-
-
-    .hero h1 span {
-
-      color:
-        var(--gold-light);
-
-      font-style:
-        italic;
-
-      display:
-        block;
-    }
-
-
-    .hero p {
-
-      color:
-        #ddd1c4;
-
-      max-width:
-        600px;
-
-      font-size:
-        17px;
-
-      margin-bottom:
-        35px;
-    }
-
-
-    .button {
-
-      display:
-        inline-flex;
-
-      align-items:
-        center;
-
-      justify-content:
-        center;
-
-      min-height:
-        50px;
-
-      padding:
-        0 25px;
-
-      border:
-        1px solid var(--gold);
-
-      background:
-        var(--gold);
-
-      color:
-        var(--brown-950);
-
-      text-transform:
-        uppercase;
-
-      font-size:
-        11px;
-
-      letter-spacing:
-        1.5px;
-
-      transition:
-        var(--transition);
-    }
-
-
-    .button:hover {
-
-      background:
-        transparent;
-
-      color:
-        var(--gold-light);
-    }
-
-
-    .button-outline {
-
-      background:
-        transparent;
-
-      color:
-        var(--gold-light);
-
-      margin-left:
-        10px;
-    }
-
-
-    /* =====================================
-       ABOUT
-    ====================================== */
-
-    .about {
-
-      background:
-        var(--cream);
-
-      color:
-        var(--brown-900);
-    }
-
-
-    .about .section-text {
-
-      color:
-        #62564c;
-    }
-
-
-    .about-grid {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        1.1fr .9fr;
-
-      gap:
-        70px;
-
-      align-items:
-        center;
-    }
-
-
-    .about-image {
-
-      min-height:
-        520px;
-    }
-
-
-    .about-image img {
-
-      height:
-        100%;
-    }
-
-
-    /* =====================================
-       VISION / MISSION
-    ====================================== */
-
-    .dark-section {
-
-      background:
-        var(--brown-900);
-    }
-
-
-    .two-column {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        1fr 1fr;
-
-      gap:
-        1px;
-
-      background:
-        var(--border);
-
-      margin-top:
-        55px;
-    }
-
-
-    .info-card {
-
-      background:
-        var(--brown-900);
-
-      padding:
-        55px;
-    }
-
-
-    .info-card h3 {
-
-      color:
-        var(--gold-light);
-
-      font-family:
-        var(--heading-font);
-
-      font-size:
-        42px;
-
-      font-weight:
-        500;
-
-      margin-bottom:
-        15px;
-    }
-
-
-    .info-card p {
-
-      color:
-        var(--muted);
-    }
-
-
-    /* =====================================
-       CHAIRMAN
-    ====================================== */
-
-    .chairman-grid {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        .8fr 1.2fr;
-
-      gap:
-        70px;
-
-      align-items:
-        center;
-    }
-
-
-    .chairman-image img {
-
-      aspect-ratio:
-        4 / 5;
-    }
-
-
-    .quote {
-
-      color:
-        var(--cream);
-
-      font-family:
-        var(--heading-font);
-
-      font-size:
-        clamp(30px, 4vw, 50px);
-
-      line-height:
-        1.15;
-
-      margin:
-        25px 0;
-    }
-
-
-    .chairman-name {
-
-      color:
-        var(--gold-light);
-
-      font-size:
-        13px;
-
-      letter-spacing:
-        2px;
-
-      text-transform:
-        uppercase;
-    }
-
-
-    /* =====================================
-       APPROACH
-    ====================================== */
-
-    .approach {
-
-      background:
-        var(--cream);
-
-      color:
-        var(--brown-900);
-    }
-
-
-    .approach .section-text {
-
-      color:
-        #62564c;
-    }
-
-
-    .approach-grid {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        repeat(4, 1fr);
-
-      margin-top:
-        60px;
-
-      border-top:
-        1px solid rgba(61,41,30,.2);
-
-      border-left:
-        1px solid rgba(61,41,30,.2);
-    }
-
-
-    .approach-card {
-
-      padding:
-        38px 28px;
-
-      min-height:
-        250px;
-
-      border-right:
-        1px solid rgba(61,41,30,.2);
-
-      border-bottom:
-        1px solid rgba(61,41,30,.2);
-    }
-
-
-    .approach-number {
-
-      color:
-        var(--gold);
-
-      font-family:
-        var(--heading-font);
-
-      font-size:
-        35px;
-    }
-
-
-    .approach-card h3 {
-
-      font-family:
-        var(--heading-font);
-
-      font-size:
-        28px;
-
-      margin:
-        15px 0;
-    }
-
-
-    .approach-card p {
-
-      color:
-        #62564c;
-
-      font-size:
-        14px;
-    }
-
-
-    /* =====================================
-       PROJECTS
-    ====================================== */
-
-    .projects {
-
-      background:
-        var(--brown-950);
-    }
-
-
-    .projects-grid {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        repeat(2, 1fr);
-
-      gap:
-        30px;
-
-      margin-top:
-        60px;
-    }
-
-
-    .project-card {
-
-      border:
-        1px solid var(--border);
-
-      background:
-        var(--brown-900);
-
-      overflow:
-        hidden;
-    }
-
-
-    .project-image {
-
-      height:
-        360px;
-
-      position:
-        relative;
-    }
-
-
-    .project-image img {
-
-      height:
-        100%;
-    }
-
-
-    .project-status {
-
-      position:
-        absolute;
-
-      top:
-        20px;
-
-      left:
-        20px;
-
-      padding:
-        8px 13px;
-
-      background:
-        var(--gold);
-
-      color:
-        var(--brown-950);
-
-      font-size:
-        9px;
-
-      letter-spacing:
-        1.5px;
-
-      text-transform:
-        uppercase;
-    }
-
-
-    .project-content {
-
-      padding:
-        30px;
-    }
-
-
-    .project-content h3 {
-
-      font-family:
-        var(--heading-font);
-
-      font-size:
-        42px;
-
-      font-weight:
-        500;
-    }
-
-
-    .project-location {
-
-      color:
-        var(--gold);
-
-      font-size:
-        11px;
-
-      letter-spacing:
-        1.5px;
-
-      text-transform:
-        uppercase;
-
-      margin:
-        5px 0 20px;
-    }
-
-
-    .project-description {
-
-      color:
-        var(--muted);
-
-      font-size:
-        14px;
-
-      margin-bottom:
-        20px;
-    }
-
-
-    .project-meta {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
-      gap:
-        10px;
-
-      border-top:
-        1px solid var(--border);
-
-      border-bottom:
-        1px solid var(--border);
-
-      padding:
-        18px 0;
-
-      margin-bottom:
-        22px;
-    }
-
-
-    .project-meta span {
-
-      display:
-        block;
-
-      color:
-        var(--muted);
-
-      font-size:
-        10px;
-
-      text-transform:
-        uppercase;
-    }
-
-
-    .project-meta strong {
-
-      color:
-        var(--cream);
-
-      font-size:
-        13px;
-
-      font-weight:
-        500;
-    }
-
-
-    .project-actions {
-
-      display:
-        flex;
-
-      gap:
-        10px;
-
-      flex-wrap:
-        wrap;
-    }
-
-
-    /* =====================================
-       CONTACT
-    ====================================== */
-
-    .contact {
-
-      background:
-        var(--brown-800);
-    }
-
-
-    .contact-grid {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        1fr 1fr;
-
-      gap:
-        70px;
-    }
-
-
-    .contact-list {
-
-      list-style:
-        none;
-
-      margin-top:
-        35px;
-    }
-
-
-    .contact-list li {
-
-      padding:
-        17px 0;
-
-      border-bottom:
-        1px solid var(--border);
-
-      color:
-        var(--muted);
-    }
-
-
-    .contact-list strong {
-
-      display:
-        block;
-
-      color:
-        var(--gold-light);
-
-      font-size:
-        11px;
-
-      letter-spacing:
-        1.5px;
-
-      text-transform:
-        uppercase;
-    }
-
-
-    .contact-form {
-
-      display:
-        grid;
-
-      gap:
-        15px;
-    }
-
-
-    .contact-form input,
-    .contact-form textarea {
-
-      width:
-        100%;
-
-      padding:
-        16px;
-
-      border:
-        1px solid var(--border);
-
-      background:
-        var(--brown-950);
-
-      color:
-        var(--cream);
-
-      outline:
-        none;
-    }
-
-
-    .contact-form textarea {
-
-      min-height:
-        150px;
-
-      resize:
-        vertical;
-    }
-
-
-    /* =====================================
-       FOOTER
-    ====================================== */
-
-    footer {
-
-      background:
-        #100b08;
-
-      padding:
-        65px 0 25px;
-
-      border-top:
-        1px solid var(--border);
-    }
-
-
-    .footer-grid {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        1.3fr 1fr 1fr;
-
-      gap:
-        50px;
-
-      padding-bottom:
-        50px;
-    }
-
-
-    footer h3 {
-
-      font-family:
-        var(--heading-font);
-
-      font-size:
-        28px;
-
-      margin-bottom:
-        15px;
-    }
-
-
-    footer p,
-    footer a {
-
-      color:
-        var(--muted);
-
-      font-size:
-        13px;
-    }
-
-
-    .footer-links {
-
-      list-style:
-        none;
-
-      display:
-        grid;
-
-      gap:
-        8px;
-    }
-
-
-    .newsletter {
-
-      display:
-        flex;
-
-      margin-top:
-        18px;
-    }
-
-
-    .newsletter input {
-
-      min-width:
-        0;
-
-      flex:
-        1;
-
-      border:
-        1px solid var(--border);
-
-      background:
-        var(--brown-900);
-
-      color:
-        var(--cream);
-
-      padding:
-        13px;
-    }
-
-
-    .newsletter button {
-
-      border:
-        1px solid var(--gold);
-
-      background:
-        var(--gold);
-
-      padding:
-        0 18px;
-
-      cursor:
-        pointer;
-    }
-
-
-    .footer-bottom {
-
-      border-top:
-        1px solid var(--border);
-
-      padding-top:
-        22px;
-
-      display:
-        flex;
-
-      justify-content:
-        space-between;
-
-      gap:
-        20px;
-
-      color:
-        #82776d;
-
-      font-size:
-        11px;
-    }
-
-
-    /* =====================================
-       MOBILE
-    ====================================== */
-
-    @media (max-width: 900px) {
-
-      .nav-links {
-
-        position:
-          absolute;
-
-        top:
-          82px;
-
-        left:
-          0;
-
-        right:
-          0;
-
-        display:
-          none;
-
-        flex-direction:
-          column;
-
-        align-items:
-          flex-start;
-
-        padding:
-          25px;
-
-        background:
-          var(--brown-900);
-
-        border-bottom:
-          1px solid var(--border);
-      }
-
-
-      .nav-links.active {
-
-        display:
-          flex;
-      }
-
-
-      .menu-toggle {
-
-        display:
-          block;
-      }
-
-
-      .about-grid,
-      .chairman-grid,
-      .contact-grid {
-
-        grid-template-columns:
-          1fr;
-      }
-
-
-      .two-column,
-      .projects-grid {
-
-        grid-template-columns:
-          1fr;
-      }
-
-
-      .approach-grid {
-
-        grid-template-columns:
-          repeat(2, 1fr);
-      }
-
-
-      .footer-grid {
-
-        grid-template-columns:
-          1fr 1fr;
-      }
-
-    }
-
-
-    @media (max-width: 600px) {
-
-      .section {
-
-        padding:
-          75px 0;
-      }
-
-
-      .hero {
-
-        min-height:
-          680px;
-      }
-
-
-      .hero h1 {
-
-        font-size:
-          58px;
-      }
-
-
-      .button-outline {
-
-        margin:
-          10px 0 0;
-      }
-
-
-      .approach-grid,
-      .footer-grid {
-
-        grid-template-columns:
-          1fr;
-      }
-
-
-      .info-card {
-
-        padding:
-          35px 25px;
-      }
-
-
-      .project-image {
-
-        height:
-          270px;
-      }
-
-
-      .project-meta {
-
-        grid-template-columns:
-          1fr;
-      }
-
-
-      .footer-bottom {
-
-        flex-direction:
-          column;
-      }
-
-    }
-
-  </style>
+  <link
+    rel="stylesheet"
+    href="/style.css"
+  >
 
 </head>
 
@@ -1469,26 +54,41 @@
 <body>
 
 
-  <!-- =====================================
+  <!-- =========================================
        HEADER
-  ====================================== -->
+  ========================================== -->
 
-  <header class="site-header">
+  <header class="site-header" id="siteHeader">
 
-    <div class="container nav">
+    <div class="container nav-wrap">
+
 
       <a
         href="#home"
         class="brand"
+        aria-label="{{ site.brand_name or 'DubaiLink Realty' }}"
       >
 
-        <img
-          src="{{ site.logo or '/assets/images/dubailink-logo.svg' }}"
-          alt="{{ site.brand_name or 'DubaiLink Realty' }}"
-          class="brand-logo"
-        >
+        <div class="brand-mark">
 
-        <span class="brand-text">
+          <span></span>
+          <span></span>
+
+        </div>
+
+
+        {% if site.logo %}
+
+          <img
+            src="{{ site.logo }}"
+            alt="{{ site.brand_name or 'DubaiLink Realty' }}"
+            class="brand-logo"
+          >
+
+        {% endif %}
+
+
+        <div class="brand-copy">
 
           <strong>
             {{ site.brand_name or "DubaiLink Realty" }}
@@ -1498,7 +98,7 @@
             {{ site.brand_tagline or "Luxury Real Estate" }}
           </small>
 
-        </span>
+        </div>
 
       </a>
 
@@ -1507,56 +107,51 @@
         class="menu-toggle"
         id="menuToggle"
         type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
       >
-        Menu
+
+        <span></span>
+        <span></span>
+        <span></span>
+
       </button>
 
 
-      <ul
-        class="nav-links"
-        id="navLinks"
+      <nav
+        class="main-nav"
+        id="mainNav"
+        aria-label="Main navigation"
       >
 
-        <li>
-          <a href="#home">
-            Home
-          </a>
-        </li>
+        <a href="#home">
+          Home
+        </a>
 
-        <li>
-          <a href="#about">
-            About Us
-          </a>
-        </li>
+        <a href="#about">
+          About
+        </a>
 
-        <li>
-          <a href="#approach">
-            Our Approach
-          </a>
-        </li>
+        <a href="#approach">
+          Our Approach
+        </a>
 
-        <li>
-          <a href="#projects">
-            Projects
-          </a>
-        </li>
+        <a href="#projects">
+          Projects
+        </a>
 
-        <li>
-          <a href="#contact">
-            Contact Us
-          </a>
-        </li>
+        <a href="#contact">
+          Contact
+        </a>
 
-        <li>
-          <a
-            href="#contact"
-            class="nav-cta"
-          >
-            Pay Now
-          </a>
-        </li>
+        <a
+          href="#contact"
+          class="nav-button"
+        >
+          Enquire
+        </a>
 
-      </ul>
+      </nav>
 
     </div>
 
@@ -1564,84 +159,168 @@
 
 
 
-  <!-- =====================================
-       PARTNER BAR
-  ====================================== -->
-
-  <div class="partner-bar">
-
-    <div class="container partner-inner">
-
-      <span>
-        {{ site.partner_status or "Authorized Partner" }}
-      </span>
-
-      <img
-        src="{{ site.partner_logo or '/assets/images/zoya-logo.svg' }}"
-        alt="{{ site.partner_name or 'Zoya Developments' }}"
-        class="partner-logo"
-      >
-
-    </div>
-
-  </div>
-
-
-
   <main>
 
 
-    <!-- =====================================
+    <!-- =========================================
          HERO
-    ====================================== -->
+    ========================================== -->
 
     <section
       class="hero"
       id="home"
+      style="--hero-image: url('{{ site.hero_image or "/images/hero.jpg" }}');"
     >
 
-      <div class="container">
+      <div class="hero-overlay"></div>
+
+      <div class="hero-glow"></div>
+
+
+      <div class="container hero-container">
 
         <div class="hero-content">
 
-          <div class="eyebrow">
+
+          <div class="eyebrow reveal">
+            <span class="eyebrow-line"></span>
+
             {{ site.hero_eyebrow or "Dubai Luxury Real Estate" }}
           </div>
 
 
-          <h1>
+          <h1 class="hero-title reveal">
 
-            {{ site.hero_title or "Spaces Made For" }}
+            {{ site.hero_title or "Exceptional Spaces." }}
 
-            <span>
-              {{ site.hero_highlight or "Exceptional Living." }}
-            </span>
+            <em>
+              {{ site.hero_highlight or "Extraordinary Living." }}
+            </em>
 
           </h1>
 
 
-          <p>
+          <p class="hero-description reveal">
+
             {{ site.hero_description or
-            "Discover thoughtfully selected residences and investment opportunities across Dubai, presented by DubaiLink Realty."
+            "Discover exceptional residences and investment opportunities across Dubai, carefully presented by DubaiLink Realty."
             }}
+
           </p>
 
 
-          <a
-            href="#projects"
-            class="button"
+          <div class="hero-actions reveal">
+
+            <a
+              href="#projects"
+              class="btn btn-gold"
+            >
+              Explore Properties
+              <span>↗</span>
+            </a>
+
+            <a
+              href="#contact"
+              class="btn btn-outline"
+            >
+              Talk To Our Team
+            </a>
+
+          </div>
+
+
+          <div class="hero-stats reveal">
+
+            <div>
+              <strong>
+                Dubai
+              </strong>
+
+              <span>
+                Prime Locations
+              </span>
+            </div>
+
+
+            <div>
+              <strong>
+                Premium
+              </strong>
+
+              <span>
+                Property Selection
+              </span>
+            </div>
+
+
+            <div>
+              <strong>
+                Trusted
+              </strong>
+
+              <span>
+                Client Guidance
+              </span>
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <a
+        href="#about"
+        class="scroll-indicator"
+        aria-label="Scroll down"
+      >
+
+        <span>
+          Scroll
+        </span>
+
+        <i></i>
+
+      </a>
+
+    </section>
+
+
+
+    <!-- =========================================
+         PARTNER BAR
+    ========================================== -->
+
+    <section class="partner-strip">
+
+      <div class="container partner-inner">
+
+        <div class="partner-label">
+          {{ site.partner_status or "Authorized Partner" }}
+        </div>
+
+
+        {% if site.partner_logo %}
+
+          <img
+            src="{{ site.partner_logo }}"
+            alt="{{ site.partner_name or 'Zoya Developments' }}"
+            class="partner-logo"
           >
-            Explore Projects
-          </a>
+
+        {% else %}
+
+          <div class="partner-name">
+            {{ site.partner_name or "Zoya Developments" }}
+          </div>
+
+        {% endif %}
 
 
-          <a
-            href="#contact"
-            class="button button-outline"
-          >
-            Speak With Us
-          </a>
-
+        <div class="partner-label partner-right">
+          Dubai · UAE
         </div>
 
       </div>
@@ -1650,32 +329,49 @@
 
 
 
-    <!-- =====================================
+    <!-- =========================================
          ABOUT
-    ====================================== -->
+    ========================================== -->
 
     <section
-      class="section about"
+      class="section about-section"
       id="about"
     >
 
       <div class="container about-grid">
 
 
-        <div class="about-image">
+        <div class="image-frame reveal">
+
+          <div class="image-corner"></div>
 
           <img
-            src="{{ about.image or '/assets/images/about.jpg' }}"
+            src="{{ about.image or "/images/about.jpg" }}"
             alt="DubaiLink Realty"
+            loading="lazy"
           >
+
+          <div class="image-caption">
+            <span>
+              Dubai
+            </span>
+
+            <span>
+              Since 2026
+            </span>
+          </div>
 
         </div>
 
 
-        <div>
+        <div class="about-content reveal">
 
-          <div class="eyebrow">
+          <div class="eyebrow dark-eyebrow">
+
+            <span class="eyebrow-line"></span>
+
             {{ about.eyebrow or "About DubaiLink Realty" }}
+
           </div>
 
 
@@ -1688,7 +384,7 @@
           </h2>
 
 
-          <p class="section-text">
+          <p class="lead-text">
 
             {{ about.description or
             "DubaiLink Realty is a premium real estate brand focused on connecting clients with carefully selected residential and investment opportunities in Dubai."
@@ -1699,14 +395,23 @@
 
           {% if about.additional_description %}
 
-            <br>
+            <p class="body-text">
 
-            <p class="section-text">
               {{ about.additional_description }}
+
             </p>
 
           {% endif %}
 
+
+          <a
+            href="#contact"
+            class="text-link"
+          >
+            Discover More
+            <span>→</span>
+          </a>
+
         </div>
 
       </div>
@@ -1715,133 +420,178 @@
 
 
 
-    <!-- =====================================
+    <!-- =========================================
          STORY / VISION / MISSION
-    ====================================== -->
+    ========================================== -->
 
-    <section class="section dark-section">
+    <section class="section story-section">
 
       <div class="container">
 
-        <div class="eyebrow">
-          Our Story
-        </div>
 
-
-        <h2 class="section-title">
-          Built Around Trust.
-        </h2>
-
-
-        <p class="section-text">
-
-          {{ about.story or
-          "We believe property is more than an address. It is a decision that shapes lifestyles, businesses and long-term financial goals."
-          }}
-
-        </p>
-
-
-        <div class="two-column">
-
-
-          <article class="info-card">
-
-            <div class="eyebrow">
-              01
-            </div>
-
-            <h3>
-              Our Vision
-            </h3>
-
-            <p>
-
-              {{ visionMission.vision or
-              "To become a trusted real estate destination for clients seeking exceptional properties and investment opportunities in Dubai."
-              }}
-
-            </p>
-
-          </article>
-
-
-          <article class="info-card">
-
-            <div class="eyebrow">
-              02
-            </div>
-
-            <h3>
-              Our Mission
-            </h3>
-
-            <p>
-
-              {{ visionMission.mission or
-              "To deliver thoughtful property guidance through transparency, professional service and carefully selected opportunities."
-              }}
-
-            </p>
-
-          </article>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================
-         CHAIRMAN
-    ====================================== -->
-
-    <section class="section dark-section">
-
-      <div class="container chairman-grid">
-
-
-        <div class="chairman-image">
-
-          <img
-            src="{{ chairman.photo or '/assets/images/chairman.jpg' }}"
-            alt="{{ chairman.name or 'Chairman' }}"
-          >
-
-        </div>
-
-
-        <div>
+        <div class="section-heading reveal">
 
           <div class="eyebrow">
-            Message From The Chairman
+
+            <span class="eyebrow-line"></span>
+
+            Our Story
+
           </div>
 
 
           <h2 class="section-title">
-            A Commitment To Lasting Value.
+            Built Around
+            <em>Trust.</em>
           </h2>
 
 
-          <p class="quote">
+          <p class="section-intro">
 
-            “{{ chairman.message or
-            "Our goal is simple — to create trusted relationships and connect people with opportunities that truly matter."
-            }}”
+            {{ about.story or
+            "We believe property is more than an address. It is a decision that shapes lifestyles, businesses and long-term financial goals."
+            }}
 
           </p>
 
+        </div>
 
-          <div class="chairman-name">
 
-            {{ chairman.name or "Farooq Khan" }}
+        <div class="vision-grid">
 
-            ·
 
-            {{ chairman.designation or "Chairman" }}
+          <article class="vision-card reveal">
+
+            <div class="card-number">
+              01
+            </div>
+
+            <div>
+
+              <p class="card-label">
+                Our Vision
+              </p>
+
+              <h3>
+                A trusted destination for exceptional property.
+              </h3>
+
+              <p class="card-text">
+
+                {{ visionMission.vision or
+                "To become a trusted real estate destination for clients seeking exceptional properties and investment opportunities in Dubai."
+                }}
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="vision-card reveal">
+
+            <div class="card-number">
+              02
+            </div>
+
+            <div>
+
+              <p class="card-label">
+                Our Mission
+              </p>
+
+              <h3>
+                Guidance that creates lasting value.
+              </h3>
+
+              <p class="card-text">
+
+                {{ visionMission.mission or
+                "To deliver thoughtful property guidance through transparency, professional service and carefully selected opportunities."
+                }}
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         CHAIRMAN
+    ========================================== -->
+
+    <section class="section chairman-section">
+
+      <div class="container chairman-grid">
+
+
+        <div class="chairman-image reveal">
+
+          <div class="portrait-frame">
+
+            <img
+              src="{{ chairman.photo or "/images/chairman.jpg" }}"
+              alt="{{ chairman.name or 'Chairman' }}"
+              loading="lazy"
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="chairman-content reveal">
+
+          <div class="eyebrow">
+
+            <span class="eyebrow-line"></span>
+
+            Message From The Chairman
+
+          </div>
+
+
+          <h2 class="section-title">
+
+            A Commitment To
+            <em>Lasting Value.</em>
+
+          </h2>
+
+
+          <div class="quote-mark">
+            “
+          </div>
+
+
+          <blockquote>
+
+            {{ chairman.message or
+            "Our goal is simple — to create trusted relationships and connect people with opportunities that truly matter."
+            }}
+
+          </blockquote>
+
+
+          <div class="chairman-signature">
+
+            <strong>
+              {{ chairman.name or "Farooq Khan" }}
+            </strong>
+
+            <span>
+              {{ chairman.designation or "Chairman" }}
+            </span>
 
           </div>
 
@@ -1853,34 +603,44 @@
 
 
 
-    <!-- =====================================
-         OUR APPROACH
-    ====================================== -->
+    <!-- =========================================
+         APPROACH
+    ========================================== -->
 
     <section
-      class="section approach"
+      class="section approach-section"
       id="approach"
     >
 
       <div class="container">
 
-        <div class="eyebrow">
-          Our Approach
+
+        <div class="section-heading reveal">
+
+          <div class="eyebrow dark-eyebrow">
+
+            <span class="eyebrow-line"></span>
+
+            Our Approach
+
+          </div>
+
+
+          <h2 class="section-title">
+            Designed Around
+            <em>Better Living.</em>
+          </h2>
+
+
+          <p class="section-intro">
+
+            {{ approach_intro or
+            "We look beyond the property itself and consider design, technology, sustainability and long-term investment value."
+            }}
+
+          </p>
+
         </div>
-
-
-        <h2 class="section-title">
-          Designed Around Better Living.
-        </h2>
-
-
-        <p class="section-text">
-
-          {{ approach_intro or
-          "We look beyond the property itself and consider design, technology, sustainability and long-term investment value."
-          }}
-
-        </p>
 
 
         <div class="approach-grid">
@@ -1888,37 +648,40 @@
 
           {% for item in collections.approach %}
 
-            <article class="approach-card">
+            <article class="approach-card reveal">
 
-              <div class="approach-number">
+              <span class="approach-number">
+                {{ item.data.number or "%02d" | format(loop.index) }}
+              </span>
 
-                {{ item.data.number or loop.index }}
-
+              <div class="approach-icon">
+                +
               </div>
 
-
               <h3>
-
-                {{ item.data.title }}
-
+                {{ item.data.title or "Premium Living" }}
               </h3>
 
-
               <p>
-
-                {{ item.data.description }}
-
+                {{ item.data.description or
+                "Thoughtfully selected solutions for contemporary Dubai living."
+                }}
               </p>
 
             </article>
 
+
           {% else %}
 
 
-            <article class="approach-card">
+            <article class="approach-card reveal">
 
-              <div class="approach-number">
+              <span class="approach-number">
                 01
+              </span>
+
+              <div class="approach-icon">
+                +
               </div>
 
               <h3>
@@ -1926,17 +689,20 @@
               </h3>
 
               <p>
-                Carefully considered architecture and interiors
-                created for contemporary lifestyles.
+                Carefully considered architecture and interiors created for contemporary lifestyles.
               </p>
 
             </article>
 
 
-            <article class="approach-card">
+            <article class="approach-card reveal">
 
-              <div class="approach-number">
+              <span class="approach-number">
                 02
+              </span>
+
+              <div class="approach-icon">
+                +
               </div>
 
               <h3>
@@ -1944,17 +710,20 @@
               </h3>
 
               <p>
-                Modern technology and connected living for
-                greater convenience and comfort.
+                Modern technology and connected living for greater convenience and comfort.
               </p>
 
             </article>
 
 
-            <article class="approach-card">
+            <article class="approach-card reveal">
 
-              <div class="approach-number">
+              <span class="approach-number">
                 03
+              </span>
+
+              <div class="approach-icon">
+                +
               </div>
 
               <h3>
@@ -1962,17 +731,20 @@
               </h3>
 
               <p>
-                A forward-looking perspective that values
-                responsible development.
+                A forward-looking perspective that values responsible and considered development.
               </p>
 
             </article>
 
 
-            <article class="approach-card">
+            <article class="approach-card reveal">
 
-              <div class="approach-number">
+              <span class="approach-number">
                 04
+              </span>
+
+              <div class="approach-icon">
+                +
               </div>
 
               <h3>
@@ -1980,14 +752,13 @@
               </h3>
 
               <p>
-                Opportunities selected with lifestyle appeal
-                and long-term investment potential in mind.
+                Opportunities selected with lifestyle appeal and long-term investment potential in mind.
               </p>
 
             </article>
 
-          {% endfor %}
 
+          {% endfor %}
 
         </div>
 
@@ -1997,34 +768,46 @@
 
 
 
-    <!-- =====================================
-         DYNAMIC PROJECTS
-    ====================================== -->
+    <!-- =========================================
+         PROJECTS
+    ========================================== -->
 
     <section
-      class="section projects"
+      class="section projects-section"
       id="projects"
     >
 
       <div class="container">
 
 
-        <div class="eyebrow">
-          Featured Developments
+        <div class="section-heading projects-heading reveal">
+
+          <div>
+
+            <div class="eyebrow">
+
+              <span class="eyebrow-line"></span>
+
+              Featured Developments
+
+            </div>
+
+
+            <h2 class="section-title">
+              Selected
+              <em>Projects.</em>
+            </h2>
+
+          </div>
+
+
+          <p class="section-intro">
+
+            Explore selected developments represented through DubaiLink Realty.
+
+          </p>
+
         </div>
-
-
-        <h2 class="section-title">
-          Selected Projects.
-        </h2>
-
-
-        <p class="section-text">
-
-          Explore selected developments represented
-          through DubaiLink Realty.
-
-        </p>
 
 
         <div class="projects-grid">
@@ -2033,57 +816,64 @@
           {% for project in collections.projects %}
 
 
-            <article class="project-card">
+            <article class="property-card reveal">
 
 
-              <div class="project-image">
+              <div class="property-image">
 
 
                 <img
-                  src="{{ project.data.image or '/assets/images/project-placeholder.jpg' }}"
-                  alt="{{ project.data.title or 'Property Project' }}"
+                  src="{{ project.data.image or "/images/project-placeholder.jpg" }}"
+                  alt="{{ project.data.title or "Dubai Property" }}"
                   loading="lazy"
                 >
 
 
                 {% if project.data.status %}
 
-                  <span class="project-status">
+                  <span class="property-status">
                     {{ project.data.status }}
                   </span>
 
                 {% endif %}
 
 
+                <div class="property-overlay">
+
+                  <a
+                    href="#contact"
+                    class="property-view"
+                  >
+                    Enquire
+                    <span>↗</span>
+                  </a>
+
+                </div>
+
+
               </div>
 
 
+              <div class="property-content">
 
-              <div class="project-content">
+
+                <div class="property-location">
+
+                  <span class="location-dot"></span>
+
+                  {{ project.data.location or "Dubai, UAE" }}
+
+                </div>
 
 
                 <h3>
-
                   {{ project.data.title or "Untitled Project" }}
-
                 </h3>
-
-
-                {% if project.data.location %}
-
-                  <div class="project-location">
-
-                    {{ project.data.location }}
-
-                  </div>
-
-                {% endif %}
-
 
 
                 {% if project.data.description %}
 
-                  <p class="project-description">
+                  <p class="property-description">
 
                     {{ project.data.description }}
 
@@ -2092,8 +882,7 @@
                 {% endif %}
 
 
-
-                <div class="project-meta">
+                <div class="property-details">
 
 
                   <div>
@@ -2103,9 +892,7 @@
                     </span>
 
                     <strong>
-
                       {{ project.data.price or "Contact Us" }}
-
                     </strong>
 
                   </div>
@@ -2114,13 +901,11 @@
                   <div>
 
                     <span>
-                      Payment Plan
+                      Payment
                     </span>
 
                     <strong>
-
                       {{ project.data.payment_plan or "Available" }}
-
                     </strong>
 
                   </div>
@@ -2133,9 +918,7 @@
                     </span>
 
                     <strong>
-
                       {{ project.data.handover or "TBA" }}
-
                     </strong>
 
                   </div>
@@ -2144,47 +927,40 @@
                 </div>
 
 
-
-                <div class="project-actions">
+                <div class="property-actions">
 
 
                   {% if project.data.brochures %}
 
-
                     {% for brochure in project.data.brochures %}
-
 
                       {% if brochure.file %}
 
                         <a
                           href="{{ brochure.file }}"
-                          class="button"
                           target="_blank"
                           rel="noopener"
+                          class="small-button"
                         >
                           {{ brochure.name or "Brochure" }}
                         </a>
-
 
                       {% elif brochure.url %}
 
                         <a
                           href="{{ brochure.url }}"
-                          class="button"
                           target="_blank"
                           rel="noopener"
+                          class="small-button"
                         >
                           {{ brochure.name or "Brochure" }}
                         </a>
 
                       {% endif %}
 
-
                     {% endfor %}
 
-
                   {% endif %}
-
 
 
                   {% if project.data.locations %}
@@ -2195,11 +971,11 @@
 
                         <a
                           href="{{ location.map_url }}"
-                          class="button button-outline"
                           target="_blank"
                           rel="noopener"
+                          class="small-button small-button-outline"
                         >
-                          Location
+                          Location ↗
                         </a>
 
                       {% endif %}
@@ -2211,7 +987,7 @@
 
                   <a
                     href="#contact"
-                    class="button button-outline"
+                    class="small-button small-button-outline"
                   >
                     Details
                   </a>
@@ -2228,12 +1004,26 @@
           {% else %}
 
 
-            <div>
+            <div class="empty-projects">
 
-              <p class="section-text">
-                Projects will appear here when they are
-                published through the CMS.
+              <div class="empty-icon">
+                ◇
+              </div>
+
+              <h3>
+                New Developments Coming Soon
+              </h3>
+
+              <p>
+                Projects will appear here when they are published through the CMS.
               </p>
+
+              <a
+                href="#contact"
+                class="btn btn-outline"
+              >
+                Contact Our Team
+              </a>
 
             </div>
 
@@ -2249,34 +1039,43 @@
 
 
 
-    <!-- =====================================
+    <!-- =========================================
          CONTACT
-    ====================================== -->
+    ========================================== -->
 
     <section
-      class="section contact"
+      class="section contact-section"
       id="contact"
     >
+
+      <div class="contact-decoration"></div>
+
 
       <div class="container contact-grid">
 
 
-        <div>
+        <div class="contact-copy reveal">
 
           <div class="eyebrow">
+
+            <span class="eyebrow-line"></span>
+
             Get In Touch
+
           </div>
 
 
           <h2 class="section-title">
-            Let's Find Your Next Address.
+
+            Let's Find Your
+            <em>Next Address.</em>
+
           </h2>
 
 
-          <p class="section-text">
+          <p class="section-intro">
 
-            Speak with our team about available properties,
-            investment opportunities or project information.
+            Speak with our team about available properties, investment opportunities or project information.
 
           </p>
 
@@ -2286,39 +1085,39 @@
 
             <li>
 
-              <strong>
+              <span>
                 Office
-              </strong>
+              </span>
 
-              {{ contact.address or
-              "Bay Square, Business Bay, Dubai, UAE"
-              }}
+              <strong>
+                {{ contact.address or "Bay Square, Business Bay, Dubai, UAE" }}
+              </strong>
 
             </li>
 
 
             <li>
 
-              <strong>
+              <span>
                 Email
-              </strong>
+              </span>
 
-              {{ contact.email or
-              "info@dubailinkrealty.com"
-              }}
+              <strong>
+                {{ contact.email or "info@dubailinkrealty.com" }}
+              </strong>
 
             </li>
 
 
             <li>
 
-              <strong>
+              <span>
                 Phone
-              </strong>
+              </span>
 
-              {{ contact.phone or
-              "+971 XX XXX XXXX"
-              }}
+              <strong>
+                {{ contact.phone or "+971 XX XXX XXXX" }}
+              </strong>
 
             </li>
 
@@ -2327,11 +1126,13 @@
 
               <li>
 
-                <strong>
+                <span>
                   WhatsApp
-                </strong>
+                </span>
 
-                {{ contact.whatsapp }}
+                <strong>
+                  {{ contact.whatsapp }}
+                </strong>
 
               </li>
 
@@ -2343,57 +1144,131 @@
         </div>
 
 
+        <div class="contact-form-wrap reveal">
 
-        <form
-          class="contact-form"
-          name="property-enquiry"
-          method="POST"
-          data-netlify="true"
-        >
+          <div class="form-heading">
 
-          <input
-            type="hidden"
-            name="form-name"
-            value="property-enquiry"
+            <span>
+              Private Enquiry
+            </span>
+
+            <strong>
+              Tell us what you're looking for.
+            </strong>
+
+          </div>
+
+
+          <form
+            class="contact-form"
+            name="property-enquiry"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
           >
 
-
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-          >
-
-
-          <input
-            type="email"
-            name="email"
-            placeholder="Email Address"
-          >
+            <input
+              type="hidden"
+              name="form-name"
+              value="property-enquiry"
+            >
 
 
-          <input
-            type="tel"
-            name="phone"
-            placeholder="Phone Number"
-          >
+            <p class="hidden-field">
+
+              <label>
+                Don't fill this out:
+                <input name="bot-field">
+              </label>
+
+            </p>
 
 
-          <textarea
-            name="message"
-            placeholder="How can we help?"
-          ></textarea>
+            <div class="form-row">
 
 
-          <button
-            type="submit"
-            class="button"
-          >
-            Send Enquiry
-          </button>
+              <label>
 
-        </form>
+                <span>
+                  Full Name
+                </span>
 
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your name"
+                  required
+                >
+
+              </label>
+
+
+              <label>
+
+                <span>
+                  Email
+                </span>
+
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email address"
+                  required
+                >
+
+              </label>
+
+
+            </div>
+
+
+            <label>
+
+              <span>
+                Phone Number
+              </span>
+
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone number"
+              >
+
+            </label>
+
+
+            <label>
+
+              <span>
+                Message
+              </span>
+
+              <textarea
+                name="message"
+                placeholder="Tell us about your property requirements..."
+                required
+              ></textarea>
+
+            </label>
+
+
+            <button
+              type="submit"
+              class="btn btn-gold form-submit"
+            >
+
+              Send Enquiry
+
+              <span>
+                →
+              </span>
+
+            </button>
+
+
+          </form>
+
+        </div>
 
       </div>
 
@@ -2404,26 +1279,34 @@
 
 
 
-  <!-- =====================================
+  <!-- =========================================
        FOOTER
-  ====================================== -->
+  ========================================== -->
 
-  <footer>
+  <footer class="site-footer">
 
-    <div class="container footer-grid">
+    <div class="container footer-main">
 
 
-      <div>
+      <div class="footer-brand">
 
-        <h3>
-          {{ site.brand_name or "DubaiLink Realty" }}
-        </h3>
+        <div class="brand-copy">
+
+          <strong>
+            {{ site.brand_name or "DubaiLink Realty" }}
+          </strong>
+
+          <small>
+            {{ site.brand_tagline or "Luxury Real Estate" }}
+          </small>
+
+        </div>
 
 
         <p>
 
           {{ site.footer_description or
-          "Luxury real estate opportunities in Dubai, presented with professionalism and care."
+          "Luxury real estate opportunities in Dubai, presented with professionalism, care and a commitment to lasting value."
           }}
 
         </p>
@@ -2431,90 +1314,69 @@
       </div>
 
 
-
-      <div>
+      <div class="footer-column">
 
         <h3>
-          Quick Links
+          Explore
         </h3>
 
+        <a href="#home">
+          Home
+        </a>
 
-        <ul class="footer-links">
+        <a href="#about">
+          About Us
+        </a>
 
-          <li>
-            <a href="#home">
-              Home
-            </a>
-          </li>
+        <a href="#approach">
+          Our Approach
+        </a>
 
-          <li>
-            <a href="#about">
-              About Us
-            </a>
-          </li>
+        <a href="#projects">
+          Projects
+        </a>
 
-          <li>
-            <a href="#approach">
-              Our Approach
-            </a>
-          </li>
-
-          <li>
-            <a href="#projects">
-              Projects
-            </a>
-          </li>
-
-          <li>
-            <a href="#contact">
-              Contact
-            </a>
-          </li>
-
-        </ul>
+        <a href="#contact">
+          Contact
+        </a>
 
       </div>
 
 
-
-      <div>
+      <div class="footer-column">
 
         <h3>
-          Newsletter
+          Contact
         </h3>
 
+        <a href="#contact">
+          {{ contact.email or "info@dubailinkrealty.com" }}
+        </a>
 
-        <p>
-          Receive selected property updates and news.
-        </p>
+        <a href="#contact">
+          {{ contact.phone or "+971 XX XXX XXXX" }}
+        </a>
 
+        <span>
+          {{ contact.address or "Dubai, UAE" }}
+        </span>
 
-        <form
-          class="newsletter"
-          name="newsletter"
-          method="POST"
-          data-netlify="true"
-        >
-
-          <input
-            type="hidden"
-            name="form-name"
-            value="newsletter"
-          >
+      </div>
 
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Your email"
-          >
+      <div class="footer-column">
 
+        <h3>
+          Partner
+        </h3>
 
-          <button type="submit">
-            →
-          </button>
+        <span>
+          {{ site.partner_status or "Authorized Partner" }}
+        </span>
 
-        </form>
+        <strong class="footer-partner">
+          {{ site.partner_name or "Zoya Developments" }}
+        </strong>
 
       </div>
 
@@ -2522,31 +1384,20 @@
     </div>
 
 
-
     <div class="container footer-bottom">
-
 
       <span>
 
         © {{ currentYear or "2026" }}
-
         {{ site.brand_name or "DubaiLink Realty" }}.
-
         All rights reserved.
 
       </span>
 
 
       <span>
-
-        {{ site.partner_name or "Zoya Developments" }}
-
-        ·
-
-        {{ site.partner_status or "Authorized Partner" }}
-
+        Dubai · United Arab Emirates
       </span>
-
 
     </div>
 
@@ -2554,51 +1405,13 @@
 
 
 
-  <!-- =====================================
-       MOBILE MENU
-  ====================================== -->
+  <!-- =========================================
+       JAVASCRIPT
+  ========================================== -->
 
-  <script>
-
-    const menuToggle =
-      document.getElementById("menuToggle");
-
-    const navLinks =
-      document.getElementById("navLinks");
-
-
-    if (menuToggle && navLinks) {
-
-      menuToggle.addEventListener(
-        "click",
-        function () {
-
-          navLinks.classList.toggle("active");
-
-        }
-      );
-
-
-      document
-        .querySelectorAll("#navLinks a")
-        .forEach(function (link) {
-
-          link.addEventListener(
-            "click",
-            function () {
-
-              navLinks.classList.remove("active");
-
-            }
-          );
-
-        });
-
-    }
-
-  </script>
+  <script src="/script.js"></script>
 
 
 </body>
 
-</html>
+</html>    
