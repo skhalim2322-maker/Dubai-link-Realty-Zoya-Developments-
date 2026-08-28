@@ -3,14 +3,8 @@ const path = require("path");
 
 module.exports = function (eleventyConfig) {
 
-  /*
-   * ==========================================
-   * STATIC ASSETS
-   * ==========================================
-   */
-
   eleventyConfig.addPassthroughCopy({
-    "assets": "assets"
+    "images": "images"
   });
 
   eleventyConfig.addPassthroughCopy({
@@ -18,24 +12,10 @@ module.exports = function (eleventyConfig) {
   });
 
 
-  /*
-   * ==========================================
-   * PROJECT COLLECTION
-   * ==========================================
-   *
-   * Decap CMS:
-   *
-   * content/projects/
-   *
-   * के अंदर जितनी .md files होंगी,
-   * सभी automatically projects collection
-   * में आ जाएंगी।
-   */
-
   eleventyConfig.addCollection("projects", function (collectionApi) {
 
     return collectionApi
-      .getFilteredByGlob"."./Content/Projects/*.md"
+      .getFilteredByGlob("./content/projects/*.md")
       .sort((a, b) => {
 
         const aTitle = a.data.title || "";
@@ -48,26 +28,14 @@ module.exports = function (eleventyConfig) {
   });
 
 
-  /*
-   * ==========================================
-   * FEATURED PROJECTS
-   * ==========================================
-   */
-
   eleventyConfig.addCollection("featuredProjects", function (collectionApi) {
 
     return collectionApi
-      .getFilteredByGlob("."./Content/Projects/*.md"
+      .getFilteredByGlob("./content/projects/*.md")
       .filter(project => project.data.featured === true);
 
   });
 
-
-  /*
-   * ==========================================
-   * APPROACH COLLECTION
-   * ==========================================
-   */
 
   eleventyConfig.addCollection("approach", function (collectionApi) {
 
@@ -85,20 +53,8 @@ module.exports = function (eleventyConfig) {
   });
 
 
-  /*
-   * ==========================================
-   * WATCH CONTENT DURING LOCAL DEVELOPMENT
-   * ==========================================
-   */
-
   eleventyConfig.addWatchTarget("./content/");
 
-
-  /*
-   * ==========================================
-   * DIRECTORY CONFIGURATION
-   * ==========================================
-   */
 
   return {
 
