@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="{{ site.meta_description or 'DubaiLink Realty — Luxury real estate opportunities in Dubai.' }}"
+  >
+
+  <meta
+    name="theme-color"
+    content="#17110d"
+  >
+
+  <title>
+    {{ site.brand_name or "DubaiLink Realty" }}
+    | {{ site.brand_tagline or "Luxury Real Estate" }}
+  </title>
+
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <link
+    rel="stylesheet"
+    href="/style.css"
+  >
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================================
+       HEADER
+  ========================================== -->
+
+  <header class="site-header" id="siteHeader">
+
+    <div class="container nav-wrap">
+
+
+      <a
+        href="#home"
+        class="brand"
+        aria-label="{{ site.brand_name or 'DubaiLink Realty' }}"
+      >
+
+        <div class="brand-mark">
+
+          <span></span>
+          <span></span>
+
+        </div>
+
+
+        {% if site.logo %}
+
+          <img
+            src="{{ site.logo }}"
+            alt="{{ site.brand_name or 'DubaiLink Realty' }}"
+            class="brand-logo"
+          >
+
+        {% endif %}
+
+
+        <div class="brand-copy">
+
+          <strong>
+            {{ site.brand_name or "DubaiLink Realty" }}
+          </strong>
+
+          <small>
+            {{ site.brand_tagline or "Luxury Real Estate" }}
+          </small>
+
+        </div>
+
+      </a>
+
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+      >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </button>
+
+
+      <nav
+        class="main-nav"
+        id="mainNav"
+        aria-label="Main navigation"
+      >
+
+        <a href="#home">
+          Home
+        </a>
+
+        <a href="#about">
+          About
+        </a>
+
+        <a href="#approach">
+          Our Approach
+        </a>
+
+        <a href="#projects">
+          Projects
+        </a>
+
+        <a href="#contact">
+          Contact
+        </a>
+
+        <a
+          href="#contact"
+          class="nav-button"
+        >
+          Enquire
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <main>
+
+
+    <!-- =========================================
+         HERO
+    ========================================== -->
+
+    <section
+      class="hero"
+      id="home"
+      style="--hero-image: url('{{ site.hero_image or "/images/hero.jpg" }}');"
+    >
+
+      <div class="hero-overlay"></div>
+
+      <div class="hero-glow"></div>
+
+
+      <div class="container hero-container">
+
+        <div class="hero-content">
+
+
+          <div class="eyebrow reveal">
+            <span class="eyebrow-line"></span>
+
+            {{ site.hero_eyebrow or "Dubai Luxury Real Estate" }}
+          </div>
+
+
+          <h1 class="hero-title reveal">
+
+            {{ site.hero_title or "Exceptional Spaces." }}
+
+            <em>
+              {{ site.hero_highlight or "Extraordinary Living." }}
+            </em>
+
+          </h1>
+
+
+          <p class="hero-description reveal">
+
+            {{ site.hero_description or
+            "Discover exceptional residences and investment opportunities across Dubai, carefully presented by DubaiLink Realty."
+            }}
+
+          </p>
+
+
+          <div class="hero-actions reveal">
+
+            <a
+              href="#projects"
+              class="btn btn-gold"
+            >
+              Explore Properties
+              <span>↗</span>
+            </a>
+
+            <a
+              href="#contact"
+              class="btn btn-outline"
+            >
+              Talk To Our Team
+            </a>
+
+          </div>
+
+
+          <div class="hero-stats reveal">
+
+            <div>
+              <strong>
+                Dubai
+              </strong>
+
+              <span>
+                Prime Locations
+              </span>
+            </div>
+
+
+            <div>
+              <strong>
+                Premium
+              </strong>
+
+              <span>
+                Property Selection
+              </span>
+            </div>
+
+
+            <div>
+              <strong>
+                Trusted
+              </strong>
+
+              <span>
+                Client Guidance
+              </span>
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <a
+        href="#about"
+        class="scroll-indicator"
+        aria-label="Scroll down"
+      >
+
+        <span>
+          Scroll
+        </span>
+
+        <i></i>
+
+      </a>
+
+    </section>
+
+
+
+    <!-- =========================================
+         PARTNER BAR
+    ========================================== -->
+
+    <section class="partner-strip">
+
+      <div class="container partner-inner">
+
+        <div class="partner-label">
+          {{ site.partner_status or "Authorized Partner" }}
+        </div>
+
+
+        {% if site.partner_logo %}
+
+          <img
+            src="{{ site.partner_logo }}"
+            alt="{{ site.partner_name or 'Zoya Developments' }}"
+            class="partner-logo"
+          >
+
+        {% else %}
+
+          <div class="partner-name">
+            {{ site.partner_name or "Zoya Developments" }}
+          </div>
+
+        {% endif %}
+
+
+        <div class="partner-label partner-right">
+          Dubai · UAE
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         ABOUT
+    ========================================== -->
+
+    <section
+      class="section about-section"
+      id="about"
+    >
+
+      <div class="container about-grid">
+
+
+        <div class="image-frame reveal">
+
+          <div class="image-corner"></div>
+
+          <img
+            src="{{ about.image or "/images/about.jpg" }}"
+            alt="DubaiLink Realty"
+            loading="lazy"
+          >
+
+          <div class="image-caption">
+            <span>
+              Dubai
+            </span>
+
+            <span>
+              Since 2026
+            </span>
+          </div>
+
+        </div>
+
+
+        <div class="about-content reveal">
+
+          <div class="eyebrow dark-eyebrow">
+
+            <span class="eyebrow-line"></span>
+
+            {{ about.eyebrow or "About DubaiLink Realty" }}
+
+          </div>
+
+
+          <h2 class="section-title">
+
+            {{ about.title or
+            "Connecting You With Dubai's Finest Addresses."
+            }}
+
+          </h2>
+
+
+          <p class="lead-text">
+
+            {{ about.description or
+            "DubaiLink Realty is a premium real estate brand focused on connecting clients with carefully selected residential and investment opportunities in Dubai."
+            }}
+
+          </p>
+
+
+          {% if about.additional_description %}
+
+            <p class="body-text">
+
+              {{ about.additional_description }}
+
+            </p>
+
+          {% endif %}
+
+
+          <a
+            href="#contact"
+            class="text-link"
+          >
+            Discover More
+            <span>→</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         STORY / VISION / MISSION
+    ========================================== -->
+
+    <section class="section story-section">
+
+      <div class="container">
+
+
+        <div class="section-heading reveal">
+
+          <div class="eyebrow">
+
+            <span class="eyebrow-line"></span>
+
+            Our Story
+
+          </div>
+
+
+          <h2 class="section-title">
+            Built Around
+            <em>Trust.</em>
+          </h2>
+
+
+          <p class="section-intro">
+
+            {{ about.story or
+            "We believe property is more than an address. It is a decision that shapes lifestyles, businesses and long-term financial goals."
+            }}
+
+          </p>
+
+        </div>
+
+
+        <div class="vision-grid">
+
+
+          <article class="vision-card reveal">
+
+            <div class="card-number">
+              01
+            </div>
+
+            <div>
+
+              <p class="card-label">
+                Our Vision
+              </p>
+
+              <h3>
+                A trusted destination for exceptional property.
+              </h3>
+
+              <p class="card-text">
+
+                {{ visionMission.vision or
+                "To become a trusted real estate destination for clients seeking exceptional properties and investment opportunities in Dubai."
+                }}
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="vision-card reveal">
+
+            <div class="card-number">
+              02
+            </div>
+
+            <div>
+
+              <p class="card-label">
+                Our Mission
+              </p>
+
+              <h3>
+                Guidance that creates lasting value.
+              </h3>
+
+              <p class="card-text">
+
+                {{ visionMission.mission or
+                "To deliver thoughtful property guidance through transparency, professional service and carefully selected opportunities."
+                }}
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         CHAIRMAN
+    ========================================== -->
+
+    <section class="section chairman-section">
+
+      <div class="container chairman-grid">
+
+
+        <div class="chairman-image reveal">
+
+          <div class="portrait-frame">
+
+            <img
+              src="{{ chairman.photo or "/images/chairman.jpg" }}"
+              alt="{{ chairman.name or 'Chairman' }}"
+              loading="lazy"
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="chairman-content reveal">
+
+          <div class="eyebrow">
+
+            <span class="eyebrow-line"></span>
+
+            Message From The Chairman
+
+          </div>
+
+
+          <h2 class="section-title">
+
+            A Commitment To
+            <em>Lasting Value.</em>
+
+          </h2>
+
+
+          <div class="quote-mark">
+            “
+          </div>
+
+
+          <blockquote>
+
+            {{ chairman.message or
+            "Our goal is simple — to create trusted relationships and connect people with opportunities that truly matter."
+            }}
+
+          </blockquote>
+
+
+          <div class="chairman-signature">
+
+            <strong>
+              {{ chairman.name or "Farooq Khan" }}
+            </strong>
+
+            <span>
+              {{ chairman.designation or "Chairman" }}
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         APPROACH
+    ========================================== -->
+
+    <section
+      class="section approach-section"
+      id="approach"
+    >
+
+      <div class="container">
+
+
+        <div class="section-heading reveal">
+
+          <div class="eyebrow dark-eyebrow">
+
+            <span class="eyebrow-line"></span>
+
+            Our Approach
+
+          </div>
+
+
+          <h2 class="section-title">
+            Designed Around
+            <em>Better Living.</em>
+          </h2>
+
+
+          <p class="section-intro">
+
+            {{ approach_intro or
+            "We look beyond the property itself and consider design, technology, sustainability and long-term investment value."
+            }}
+
+          </p>
+
+        </div>
+
+
+        <div class="approach-grid">
+
+
+          {% for item in collections.approach %}
+
+            <article class="approach-card reveal">
+
+              <span class="approach-number">
+                {{ item.data.number or "%02d" | format(loop.index) }}
+              </span>
+
+              <div class="approach-icon">
+                +
+              </div>
+
+              <h3>
+                {{ item.data.title or "Premium Living" }}
+              </h3>
+
+              <p>
+                {{ item.data.description or
+                "Thoughtfully selected solutions for contemporary Dubai living."
+                }}
+              </p>
+
+            </article>
+
+
+          {% else %}
+
+
+            <article class="approach-card reveal">
+
+              <span class="approach-number">
+                01
+              </span>
+
+              <div class="approach-icon">
+                +
+              </div>
+
+              <h3>
+                Elevated Design
+              </h3>
+
+              <p>
+                Carefully considered architecture and interiors created for contemporary lifestyles.
+              </p>
+
+            </article>
+
+
+            <article class="approach-card reveal">
+
+              <span class="approach-number">
+                02
+              </span>
+
+              <div class="approach-icon">
+                +
+              </div>
+
+              <h3>
+                Smart Homes
+              </h3>
+
+              <p>
+                Modern technology and connected living for greater convenience and comfort.
+              </p>
+
+            </article>
+
+
+            <article class="approach-card reveal">
+
+              <span class="approach-number">
+                03
+              </span>
+
+              <div class="approach-icon">
+                +
+              </div>
+
+              <h3>
+                Sustainable Development
+              </h3>
+
+              <p>
+                A forward-looking perspective that values responsible and considered development.
+              </p>
+
+            </article>
+
+
+            <article class="approach-card reveal">
+
+              <span class="approach-number">
+                04
+              </span>
+
+              <div class="approach-icon">
+                +
+              </div>
+
+              <h3>
+                Investment Value
+              </h3>
+
+              <p>
+                Opportunities selected with lifestyle appeal and long-term investment potential in mind.
+              </p>
+
+            </article>
+
+
+          {% endfor %}
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         PROJECTS
+    ========================================== -->
+
+    <section
+      class="section projects-section"
+      id="projects"
+    >
+
+      <div class="container">
+
+
+        <div class="section-heading projects-heading reveal">
+
+          <div>
+
+            <div class="eyebrow">
+
+              <span class="eyebrow-line"></span>
+
+              Featured Developments
+
+            </div>
+
+
+            <h2 class="section-title">
+              Selected
+              <em>Projects.</em>
+            </h2>
+
+          </div>
+
+
+          <p class="section-intro">
+
+            Explore selected developments represented through DubaiLink Realty.
+
+          </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+          {% for project in collections.projects %}
+
+
+            <article class="property-card reveal">
+
+
+              <div class="property-image">
+
+
+                <img
+                  src="{{ project.data.image or "/images/project-placeholder.jpg" }}"
+                  alt="{{ project.data.title or "Dubai Property" }}"
+                  loading="lazy"
+                >
+
+
+                {% if project.data.status %}
+
+                  <span class="property-status">
+                    {{ project.data.status }}
+                  </span>
+
+                {% endif %}
+
+
+                <div class="property-overlay">
+
+                  <a
+                    href="#contact"
+                    class="property-view"
+                  >
+                    Enquire
+                    <span>↗</span>
+                  </a>
+
+                </div>
+
+
+              </div>
+
+
+              <div class="property-content">
+
+
+                <div class="property-location">
+
+                  <span class="location-dot"></span>
+
+                  {{ project.data.location or "Dubai, UAE" }}
+
+                </div>
+
+
+                <h3>
+                  {{ project.data.title or "Untitled Project" }}
+                </h3>
+
+
+                {% if project.data.description %}
+
+                  <p class="property-description">
+
+                    {{ project.data.description }}
+
+                  </p>
+
+                {% endif %}
+
+
+                <div class="property-details">
+
+
+                  <div>
+
+                    <span>
+                      Starting From
+                    </span>
+
+                    <strong>
+                      {{ project.data.price or "Contact Us" }}
+                    </strong>
+
+                  </div>
+
+
+                  <div>
+
+                    <span>
+                      Payment
+                    </span>
+
+                    <strong>
+                      {{ project.data.payment_plan or "Available" }}
+                    </strong>
+
+                  </div>
+
+
+                  <div>
+
+                    <span>
+                      Handover
+                    </span>
+
+                    <strong>
+                      {{ project.data.handover or "TBA" }}
+                    </strong>
+
+                  </div>
+
+
+                </div>
+
+
+                <div class="property-actions">
+
+
+                  {% if project.data.brochures %}
+
+                    {% for brochure in project.data.brochures %}
+
+                      {% if brochure.file %}
+
+                        <a
+                          href="{{ brochure.file }}"
+                          target="_blank"
+                          rel="noopener"
+                          class="small-button"
+                        >
+                          {{ brochure.name or "Brochure" }}
+                        </a>
+
+                      {% elif brochure.url %}
+
+                        <a
+                          href="{{ brochure.url }}"
+                          target="_blank"
+                          rel="noopener"
+                          class="small-button"
+                        >
+                          {{ brochure.name or "Brochure" }}
+                        </a>
+
+                      {% endif %}
+
+                    {% endfor %}
+
+                  {% endif %}
+
+
+                  {% if project.data.locations %}
+
+                    {% for location in project.data.locations %}
+
+                      {% if location.map_url %}
+
+                        <a
+                          href="{{ location.map_url }}"
+                          target="_blank"
+                          rel="noopener"
+                          class="small-button small-button-outline"
+                        >
+                          Location ↗
+                        </a>
+
+                      {% endif %}
+
+                    {% endfor %}
+
+                  {% endif %}
+
+
+                  <a
+                    href="#contact"
+                    class="small-button small-button-outline"
+                  >
+                    Details
+                  </a>
+
+
+                </div>
+
+
+              </div>
+
+            </article>
+
+
+          {% else %}
+
+
+            <div class="empty-projects">
+
+              <div class="empty-icon">
+                ◇
+              </div>
+
+              <h3>
+                New Developments Coming Soon
+              </h3>
+
+              <p>
+                Projects will appear here when they are published through the CMS.
+              </p>
+
+              <a
+                href="#contact"
+                class="btn btn-outline"
+              >
+                Contact Our Team
+              </a>
+
+            </div>
+
+
+          {% endfor %}
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         CONTACT
+    ========================================== -->
+
+    <section
+      class="section contact-section"
+      id="contact"
+    >
+
+      <div class="contact-decoration"></div>
+
+
+      <div class="container contact-grid">
+
+
+        <div class="contact-copy reveal">
+
+          <div class="eyebrow">
+
+            <span class="eyebrow-line"></span>
+
+            Get In Touch
+
+          </div>
+
+
+          <h2 class="section-title">
+
+            Let's Find Your
+            <em>Next Address.</em>
+
+          </h2>
+
+
+          <p class="section-intro">
+
+            Speak with our team about available properties, investment opportunities or project information.
+
+          </p>
+
+
+          <ul class="contact-list">
+
+
+            <li>
+
+              <span>
+                Office
+              </span>
+
+              <strong>
+                {{ contact.address or "Bay Square, Business Bay, Dubai, UAE" }}
+              </strong>
+
+            </li>
+
+
+            <li>
+
+              <span>
+                Email
+              </span>
+
+              <strong>
+                {{ contact.email or "info@dubailinkrealty.com" }}
+              </strong>
+
+            </li>
+
+
+            <li>
+
+              <span>
+                Phone
+              </span>
+
+              <strong>
+                {{ contact.phone or "+971 XX XXX XXXX" }}
+              </strong>
+
+            </li>
+
+
+            {% if contact.whatsapp %}
+
+              <li>
+
+                <span>
+                  WhatsApp
+                </span>
+
+                <strong>
+                  {{ contact.whatsapp }}
+                </strong>
+
+              </li>
+
+            {% endif %}
+
+
+          </ul>
+
+        </div>
+
+
+        <div class="contact-form-wrap reveal">
+
+          <div class="form-heading">
+
+            <span>
+              Private Enquiry
+            </span>
+
+            <strong>
+              Tell us what you're looking for.
+            </strong>
+
+          </div>
+
+
+          <form
+            class="contact-form"
+            name="property-enquiry"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+          >
+
+            <input
+              type="hidden"
+              name="form-name"
+              value="property-enquiry"
+            >
+
+
+            <p class="hidden-field">
+
+              <label>
+                Don't fill this out:
+                <input name="bot-field">
+              </label>
+
+            </p>
+
+
+            <div class="form-row">
+
+
+              <label>
+
+                <span>
+                  Full Name
+                </span>
+
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your name"
+                  required
+                >
+
+              </label>
+
+
+              <label>
+
+                <span>
+                  Email
+                </span>
+
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email address"
+                  required
+                >
+
+              </label>
+
+
+            </div>
+
+
+            <label>
+
+              <span>
+                Phone Number
+              </span>
+
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone number"
+              >
+
+            </label>
+
+
+            <label>
+
+              <span>
+                Message
+              </span>
+
+              <textarea
+                name="message"
+                placeholder="Tell us about your property requirements..."
+                required
+              ></textarea>
+
+            </label>
+
+
+            <button
+              type="submit"
+              class="btn btn-gold form-submit"
+            >
+
+              Send Enquiry
+
+              <span>
+                →
+              </span>
+
+            </button>
+
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================================
+       FOOTER
+  ========================================== -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-main">
+
+
+      <div class="footer-brand">
+
+        <div class="brand-copy">
+
+          <strong>
+            {{ site.brand_name or "DubaiLink Realty" }}
+          </strong>
+
+          <small>
+            {{ site.brand_tagline or "Luxury Real Estate" }}
+          </small>
+
+        </div>
+
+
+        <p>
+
+          {{ site.footer_description or
+          "Luxury real estate opportunities in Dubai, presented with professionalism, care and a commitment to lasting value."
+          }}
+
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Explore
+        </h3>
+
+        <a href="#home">
+          Home
+        </a>
+
+        <a href="#about">
+          About Us
+        </a>
+
+        <a href="#approach">
+          Our Approach
+        </a>
+
+        <a href="#projects">
+          Projects
+        </a>
+
+        <a href="#contact">
+          Contact
+        </a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Contact
+        </h3>
+
+        <a href="#contact">
+          {{ contact.email or "info@dubailinkrealty.com" }}
+        </a>
+
+        <a href="#contact">
+          {{ contact.phone or "+971 XX XXX XXXX" }}
+        </a>
+
+        <span>
+          {{ contact.address or "Dubai, UAE" }}
+        </span>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Partner
+        </h3>
+
+        <span>
+          {{ site.partner_status or "Authorized Partner" }}
+        </span>
+
+        <strong class="footer-partner">
+          {{ site.partner_name or "Zoya Developments" }}
+        </strong>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="container footer-bottom">
+
+      <span>
+
+        © {{ currentYear or "2026" }}
+        {{ site.brand_name or "DubaiLink Realty" }}.
+        All rights reserved.
+
+      </span>
+
+
+      <span>
+        Dubai · United Arab Emirates
+      </span>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =========================================
+       JAVASCRIPT
+  ========================================== -->
+
+  <script src="/script.js"></script>
+
+
+</body>
+
+</html>
