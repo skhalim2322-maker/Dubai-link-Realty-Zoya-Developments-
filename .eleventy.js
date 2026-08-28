@@ -35,7 +35,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("projects", function (collectionApi) {
 
     return collectionApi
-      .getFilteredByGlob"./Content/Projects/*.md"
+      .getFilteredByGlob"."./Content/Projects/*.md"
       .sort((a, b) => {
 
         const aTitle = a.data.title || "";
@@ -57,7 +57,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("featuredProjects", function (collectionApi) {
 
     return collectionApi
-      .getFilteredByGlob("./Content/Projects/*.md")
+      .getFilteredByGlob("."./Content/Projects/*.md"
       .filter(project => project.data.featured === true);
 
   });
