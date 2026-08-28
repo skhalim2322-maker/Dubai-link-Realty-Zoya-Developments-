@@ -1,0 +1,719 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="robots"
+    content="noindex"
+  >
+
+  <title>
+    DubaiLink Realty — Admin CMS
+  </title>
+
+</head>
+
+
+<body>
+
+
+  <script>
+
+    /*
+     * Decap CMS को external config.yml से
+     * load नहीं करना है।
+     *
+     * इससे config.yml 404 error नहीं आएगा।
+     */
+
+    window.CMS_MANUAL_INIT = true;
+
+  </script>
+
+
+  <script
+    src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"
+  ></script>
+
+
+  <script>
+
+    window.addEventListener("load", function () {
+
+      if (
+        typeof CMS === "undefined" &&
+        typeof initCMS === "undefined"
+      ) {
+        console.error("Decap CMS failed to load.");
+        return;
+      }
+
+
+      const cmsConfig = {
+
+        load_config_file: false,
+
+
+        backend: {
+
+          name: "github",
+
+          repo:
+            "skhalim2322-maker/Dubai-link-Realty-Zoya-Developments",
+
+          branch:
+            "main"
+
+        },
+
+
+        media_folder:
+          "images",
+
+        public_folder:
+          "/images",
+
+
+        collections: [
+
+          /*
+           * =================================
+           * PROJECTS
+           * =================================
+           */
+
+          {
+
+            name:
+              "projects",
+
+            label:
+              "Projects",
+
+            folder:
+              "content/projects",
+
+            create:
+              true,
+
+            extension:
+              "md",
+
+            format:
+              "frontmatter",
+
+            slug:
+              "{{slug}}",
+
+
+            fields: [
+
+              {
+                label: "Title",
+                name: "title",
+                widget: "string",
+                required: true
+              },
+
+              {
+                label: "Image",
+                name: "image",
+                widget: "image",
+                required: false
+              },
+
+              {
+                label: "Status",
+                name: "status",
+                widget: "string",
+                required: false
+              },
+
+              {
+                label: "Location",
+                name: "location",
+                widget: "string",
+                required: false
+              },
+
+              {
+                label: "Price",
+                name: "price",
+                widget: "string",
+                required: false
+              },
+
+              {
+                label: "Payment Plan",
+                name: "payment_plan",
+                widget: "string",
+                required: false
+              },
+
+              {
+                label: "Handover",
+                name: "handover",
+                widget: "string",
+                required: false
+              },
+
+              {
+                label: "Description",
+                name: "description",
+                widget: "text",
+                required: false
+              },
+
+              {
+                label: "Featured Project",
+                name: "featured",
+                widget: "boolean",
+                default: false,
+                required: false
+              },
+
+
+              /*
+               * =============================
+               * BROCHURES
+               * =============================
+               */
+
+              {
+                label: "Brochures",
+                name: "brochures",
+                widget: "list",
+                required: false,
+
+                fields: [
+
+                  {
+                    label: "Name",
+                    name: "name",
+                    widget: "string",
+                    required: false
+                  },
+
+                  {
+                    label: "File",
+                    name: "file",
+                    widget: "file",
+                    required: false
+                  },
+
+                  {
+                    label: "URL",
+                    name: "url",
+                    widget: "string",
+                    required: false
+                  }
+
+                ]
+
+              },
+
+
+              /*
+               * =============================
+               * LOCATIONS
+               * =============================
+               */
+
+              {
+                label: "Locations",
+                name: "locations",
+                widget: "list",
+                required: false,
+
+                fields: [
+
+                  {
+                    label: "Name",
+                    name: "name",
+                    widget: "string",
+                    required: false
+                  },
+
+                  {
+                    label: "Address",
+                    name: "address",
+                    widget: "string",
+                    required: false
+                  },
+
+                  {
+                    label: "Map URL",
+                    name: "map_url",
+                    widget: "string",
+                    required: false
+                  }
+
+                ]
+
+              }
+
+            ]
+
+          },
+
+
+          /*
+           * =================================
+           * APPROACH
+           * =================================
+           */
+
+          {
+
+            name:
+              "approach",
+
+            label:
+              "Our Approach",
+
+            folder:
+              "content/approach",
+
+            create:
+              true,
+
+            extension:
+              "md",
+
+            format:
+              "frontmatter",
+
+            slug:
+              "{{slug}}",
+
+
+            fields: [
+
+              {
+                label: "Number",
+                name: "number",
+                widget: "number",
+                value_type: "int",
+                required: false
+              },
+
+              {
+                label: "Title",
+                name: "title",
+                widget: "string",
+                required: true
+              },
+
+              {
+                label: "Description",
+                name: "description",
+                widget: "text",
+                required: false
+              }
+
+            ]
+
+          },
+
+
+          /*
+           * =================================
+           * SITE SETTINGS
+           * =================================
+           */
+
+          {
+
+            name:
+              "site",
+
+            label:
+              "Site Settings",
+
+            editor: {
+
+              preview:
+                false
+
+            },
+
+
+            files: [
+
+              {
+
+                label:
+                  "Website Settings",
+
+                name:
+                  "settings",
+
+                file:
+                  "content/site.yml",
+
+
+                fields: [
+
+                  {
+                    label: "Brand Name",
+                    name: "brand_name",
+                    widget: "string",
+                    default: "DubaiLink Realty"
+                  },
+
+                  {
+                    label: "Brand Tagline",
+                    name: "brand_tagline",
+                    widget: "string",
+                    default: "Luxury Real Estate"
+                  },
+
+                  {
+                    label: "Logo",
+                    name: "logo",
+                    widget: "image",
+                    required: false
+                  },
+
+                  {
+                    label: "Hero Image",
+                    name: "hero_image",
+                    widget: "image",
+                    required: false
+                  },
+
+                  {
+                    label: "Hero Eyebrow",
+                    name: "hero_eyebrow",
+                    widget: "string",
+                    required: false
+                  },
+
+                  {
+                    label: "Hero Title",
+                    name: "hero_title",
+                    widget: "string",
+                    required: false
+                  },
+
+                  {
+                    label: "Hero Highlight",
+                    name: "hero_highlight",
+                    widget: "string",
+                    required: false
+                  },
+
+                  {
+                    label: "Hero Description",
+                    name: "hero_description",
+                    widget: "text",
+                    required: false
+                  },
+
+                  {
+                    label: "Meta Description",
+                    name: "meta_description",
+                    widget: "text",
+                    required: false
+                  },
+
+                  {
+                    label: "Footer Description",
+                    name: "footer_description",
+                    widget: "text",
+                    required: false
+                  },
+
+                  {
+                    label: "Partner Name",
+                    name: "partner_name",
+                    widget: "string",
+                    default: "Zoya Developments"
+                  },
+
+                  {
+                    label: "Partner Status",
+                    name: "partner_status",
+                    widget: "string",
+                    default: "Authorized Partner"
+                  },
+
+                  {
+                    label: "Partner Logo",
+                    name: "partner_logo",
+                    widget: "image",
+                    required: false
+                  }
+
+                ]
+
+              }
+
+            ]
+
+          },
+
+
+          /*
+           * =================================
+           * ABOUT / CHAIRMAN / CONTACT
+           * =================================
+           */
+
+          {
+
+            name:
+              "content",
+
+            label:
+              "Website Content",
+
+            editor: {
+
+              preview:
+                false
+
+            },
+
+
+            files: [
+
+              {
+
+                label:
+                  "About Us",
+
+                name:
+                  "about",
+
+                file:
+                  "content/about.yml",
+
+
+                fields: [
+
+                  {
+                    label: "Eyebrow",
+                    name: "eyebrow",
+                    widget: "string",
+                    required: false
+                  },
+
+                  {
+                    label: "Title",
+                    name: "title",
+                    widget: "string",
+                    required: false
+                  },
+
+                  {
+                    label: "Image",
+                    name: "image",
+                    widget: "image",
+                    required: false
+                  },
+
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "text",
+                    required: false
+                  },
+
+                  {
+                    label: "Additional Description",
+                    name: "additional_description",
+                    widget: "text",
+                    required: false
+                  },
+
+                  {
+                    label: "Story",
+                    name: "story",
+                    widget: "text",
+                    required: false
+                  }
+
+                ]
+
+              },
+
+
+              {
+
+                label:
+                  "Vision & Mission",
+
+                name:
+                  "vision_mission",
+
+                file:
+                  "content/vision-mission.yml",
+
+
+                fields: [
+
+                  {
+                    label: "Vision",
+                    name: "vision",
+                    widget: "text",
+                    required: false
+                  },
+
+                  {
+                    label: "Mission",
+                    name: "mission",
+                    widget: "text",
+                    required: false
+                  }
+
+                ]
+
+              },
+
+
+              {
+
+                label:
+                  "Chairman",
+
+                name:
+                  "chairman",
+
+                file:
+                  "content/chairman.yml",
+
+
+                fields: [
+
+                  {
+                    label: "Name",
+                    name: "name",
+                    widget: "string",
+                    required: false
+                  },
+
+                  {
+                    label: "Designation",
+                    name: "designation",
+                    widget: "string",
+                    required: false
+                  },
+
+                  {
+                    label: "Photo",
+                    name: "photo",
+                    widget: "image",
+                    required: false
+                  },
+
+                  {
+                    label: "Message",
+                    name: "message",
+                    widget: "text",
+                    required: false
+                  }
+
+                ]
+
+              },
+
+
+              {
+
+                label:
+                  "Contact",
+
+                name:
+                  "contact",
+
+                file:
+                  "content/contact.yml",
+
+
+                fields: [
+
+                  {
+                    label: "Address",
+                    name: "address",
+                    widget: "string",
+                    required: false
+                  },
+
+                  {
+                    label: "Email",
+                    name: "email",
+                    widget: "string",
+                    required: false
+                  },
+
+                  {
+                    label: "Phone",
+                    name: "phone",
+                    widget: "string",
+                    required: false
+                  },
+
+                  {
+                    label: "WhatsApp",
+                    name: "whatsapp",
+                    widget: "string",
+                    required: false
+                  }
+
+                ]
+
+              }
+
+            ]
+
+          }
+
+        ]
+
+      };
+
+
+      /*
+       * CMS START
+       */
+
+      if (typeof initCMS === "function") {
+
+        initCMS({
+
+          config:
+            cmsConfig
+
+        });
+
+      }
+
+      else if (typeof CMS !== "undefined") {
+
+        CMS.init({
+
+          config:
+            cmsConfig
+
+        });
+
+      }
+
+    });
+
+  </script>
+
+
+</body>
+
+</html>
